@@ -65,7 +65,7 @@ line-height:30px;
 }
 #nav{
   display: flex;
-  height: 104px;
+  height: 1.1rem /* 110/100 */;
   background: url('./assets/head_bg.png') no-repeat center center
 }
 .logo{
@@ -75,7 +75,7 @@ line-height:30px;
   position: absolute;
   
   width: 100%;
-  height: 104px;
+  height: 1.04rem;
   background: url('./assets/logo.png') no-repeat center center
 }
 </style>
