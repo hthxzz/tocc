@@ -12,7 +12,8 @@
                         <h2>TOP5</h2>
                     </div>
                     <div class="char">
-
+                        <div></div>
+                        <div></div>
                     </div>
                 </div>
             </div>
