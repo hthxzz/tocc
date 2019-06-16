@@ -3,6 +3,18 @@
         <div class="left-panel panel">
             <div class="first item">
                 <span></span>
+                <panelTitle title="人口迁移人数统计"></panelTitle>
+                <div class="content">
+                    <div class="title">
+                        <h2>交通方式</h2>
+                        <h2>迁入</h2>
+                        <h2>迁出</h2>
+                        <h2>TOP5</h2>
+                    </div>
+                    <div class="char">
+
+                    </div>
+                </div>
             </div>
             <div class="second item"></div>
             <div class="three item"></div>
@@ -22,8 +34,12 @@
 </template>
 
 <script>
+import panelTitle from "../components/index/panelTitle.vue";
     export default {
         name: '',
+        components: {
+            panelTitle
+        },
         data() {
             return {
                 
@@ -38,7 +54,7 @@
         width: 100%;
         display: flex;
         .panel{
-            flex: 430;
+            flex: 410;
             margin-left: .1rem /* 10/100 */;
             display: flex;
             flex-direction: column;
@@ -47,10 +63,22 @@
                 // height:342px;
                 background:rgba(5,12,38,1);
                 border:1px solid rgba(32,86,221,1);
-                opacity:0.4;
+                // opacity:0.4;
             }
+
             .first{
                 flex: 1;
+                .content{
+                    .title{
+                        // width:133px;
+                        // height:16px;
+                        font-size:16px;
+                        font-family:MicrosoftYaHei;
+                        font-weight:400;
+                        color:rgba(255,255,255,1);
+                        line-height:30px;
+                    }
+                }
             }
             .first::before{
                 width: 1px;
@@ -67,7 +95,7 @@
             }
         }
         .content{
-            flex-basis: 1060;
+            flex: 1060;
             display: flex;
             flex-direction: column;
             margin: 0 0 0 10px;
@@ -88,6 +116,9 @@
                 border:1px solid rgba(32,86,221,1);
                 opacity:0.4;
             }
+        }
+        .right-panel{
+            margin-right: 10px;
         }
     }
 </style>

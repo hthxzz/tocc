@@ -1,11 +1,12 @@
+
 <template>
   <div id="app">
     <div id="nav">
       <div class="bj"></div>
       <div class="time">
-        <h2>2019年6月12日 12：23：05</h2>
+        <h2>{{time}}</h2>
       </div>
-      <div class="menu left" @click="selectSubSys">
+      <div class="menu left" @click="selectSubSys" @mouseover="showMenu" @mouseleave="hideMenu">
         <div class="index left-actived" ref="index">系统首页</div>
         <div class="jcyj" ref="jcyj">监测预警</div>
         <div class="ztjc" ref="ztjc">专题检测</div>
@@ -29,18 +30,61 @@
     <div class="content">
       <router-view/>
     </div>
+    <!-- <div class="modal"> -->
+      <sub-menu :show="show" :sysName="sysName"></sub-menu>
+    <!-- </div> -->
     
   </div>
 </template>
 <script>
+import subMenu from "./components/index/subMenu.vue";
     export default {
         name: '',
+        components: {
+          subMenu
+        },
         data() {
             return {
-                
+              time: '',
+              sysName: ''
+                // show:this.$store.state.menushow
+
             }
         },
+        mounted () {
+          this.$store.state.currentActiveMenuEle = this.$refs.index;
+
+          setInterval(() => {
+          var date = new Date(),
+              year = date.getFullYear(),
+              month = date.getMonth() + 1,
+              day = date.getDate(),
+              hour = this.formateDate(date.getHours()),
+              minutes = this.formateDate(date.getMinutes()),
+              seconds = this.formateDate(date.getSeconds()),
+              time = year + "年" + month + "月" + day + "日" + " " + hour + ":" + minutes + ":" + seconds;
+              this.time = time;
+          }, 1000);
+        },
+        computed: {
+          show:function(){
+            return this.$store.state.menushow
+          }
+        },
         methods: {
+          formateDate(d){
+            return d < 10 ? "0" + d : d;
+          },
+          showMenu(){
+            console.log(this.$store.state.menushow);
+            // setTimeout(() => {
+              this.$store.state.menushow = true;
+            // }, 1000);
+            
+          },
+          hideMenu(){
+            this.$store.state.menushow = false;
+          },
           selectSubSys(event){
             var  refs = this.$refs,
             leftmenu = ["index","jcyj","ztjc"],
@@ -49,13 +93,9 @@
             //选中的元素是否是菜单
             lflag = leftmenu.indexOf(selectEleClass) != -1,
             rflag = rightmenu.indexOf(selectEleClass) != -1;
-            leftmenu.forEach(function(item,inex){
-              refs[item].classList.remove("left-actived");
-            });
 
-            rightmenu.forEach(function(item,inex){
-              refs[item].classList.remove("right-actived");
-            });            
+
+         
             // refs.index.classList.remove("left-actived");
             // refs.jcyj.classList.remo
             // ve("left-actived");
@@ -65,12 +105,22 @@
             // refs.xxfb.classList.remove("right-actived");
             // refs.ztjc.classList.remove("right-actived");
             if (lflag) {
+                leftmenu.forEach(function(item,inex){
+                  refs[item].classList.remove("left-actived");
+                });    
                event.srcElement.classList.add("left-actived");
+               this.$router.push(selectEleClass);  
+           
             }
             if (rflag) {
+              rightmenu.forEach(function(item,inex){
+                refs[item].classList.remove("right-actived");
+              });   
                event.srcElement.classList.add("right-actived");
+               this.$router.push(selectEleClass);  
+ 
             }   
-            this.$router.push(selectEleClass);       
+                 
            
             
             
@@ -97,8 +147,11 @@
       }
       .time{
         flex: 241;
-        width:2.05rem; /* 205/100 */
-        height:0.12rem; /* 12/100 */
+        @include center;
+        display: flex;
+
+        // width:2.05rem; /* 205/100 */
+        // height:0.12rem; /* 12/100 */
 
         h2{
           font-size:.14rem /* 14/100 */;
@@ -106,18 +159,17 @@
           font-weight:bold;
           color:rgba(255,255,255,1);
           line-height:30px;
-          margin-top: .26rem /* 26/100 */;
+          // margin-top: .26rem /* 26/100 */;
         }
       }
       .menu{
         display: flex;
         width: 360px;
         flex: 400;
-        // @include center;
+         @include center;
         >div{
           width:1.11rem /* 111/100 */;
           height:.36rem /* 36/100 */;
-          margin-top: .26rem /* 26/100 */;
           font-size:.18rem /* 18/100 */;
           font-family:MicrosoftYaHei-Bold;
           font-weight:bold;
@@ -198,15 +250,6 @@
 #nav{
   flex: 110;
 }
-
-
-
-
-
-
-
-
-
 .left-actived{
   background: url('./assets/left_nav_h.png')  no-repeat !important;
   background-size: 100% 100%!important;
@@ -217,5 +260,8 @@
 }
 .content{
   flex: 970;
+}
+.modal{
+  position: absolute;
 }
 </style>
