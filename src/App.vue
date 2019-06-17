@@ -31,7 +31,7 @@
       <router-view/>
     </div>
     <!-- <div class="modal"> -->
-      <sub-menu :show="show" :sysName="sysName"></sub-menu>
+      <sub-menu :show="show" :sysName="sysName" :positin="positin"></sub-menu>
     <!-- </div> -->
     
   </div>
@@ -46,14 +46,16 @@ import subMenu from "./components/index/subMenu.vue";
         data() {
             return {
               time: '',
-              sysName: ''
+              sysName: '',
+              elementNav: '',
+              elementHover: ''
                 // show:this.$store.state.menushow
 
             }
         },
         mounted () {
           this.$store.state.currentActiveMenuEle = this.$refs.index;
-
+          this.elementNav = document.querySelector("#nav").getBoundingClientRect();
           setInterval(() => {
           var date = new Date(),
               year = date.getFullYear(),
@@ -69,6 +71,9 @@ import subMenu from "./components/index/subMenu.vue";
         computed: {
           show:function(){
             return this.$store.state.menushow
+          },
+          positin:function(){
+            return  [this.elementHover.x + this.elementHover.width/2, this.elementNav.height - 10];
           }
         },
         methods: {
@@ -77,7 +82,10 @@ import subMenu from "./components/index/subMenu.vue";
           },
           showMenu(){
             console.log(this.$store.state.menushow);
+
+            this.elementHover = event.srcElement.getBoundingClientRect();
             // setTimeout(() => {
+
               this.$store.state.menushow = true;
             // }, 1000);
             
