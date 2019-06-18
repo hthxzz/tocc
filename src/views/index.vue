@@ -12,8 +12,8 @@
                         <h2>TOP5</h2>
                     </div>
                     <div class="char">
-                        <div></div>
-                        <div></div>
+                        <div class="pic-char"></div>
+                        <div class="bar"></div>
                     </div>
                 </div>
             </div>

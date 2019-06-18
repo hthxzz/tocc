@@ -1,5 +1,5 @@
 <template>
-    <div class="wrapper" v-show="show" @mouseover="showMenu" @mouseleave="hideMenu">
+    <div class="wrapper" v-show="show" v-bind:style="{top:positin[1] + 'px',left:positin[0] - elementHeight/2 +'px'}" @mouseover="showMenu" @mouseleave="hideMenu">
         <span class="tran"></span>
         <div class="item" v-for="(item, index) in menuList" @click="goto()">
             <img :src="(item.icon)" alt="" width="100px" height="100px">
@@ -17,20 +17,29 @@
                     {"title":"居民出行监测","bg-pic":"../../image/index/menu/list_bg.png","icon":require("../../assets/index/menu/jmcx.png")},
                     {"title":"路网运行监测","bg-pic":"../../image/index/menu/list_bg.png","icon":require("../../assets/index/menu/lwyx.png")},
                     {"title":"重点运输车辆监测","bg-pic":"../../image/index/menu/list_bg.png","icon":require("../../assets/index/menu/zdyscl.png")}
-                ]
+                ],
+                elementHeight: 0
             }
         },
         props: {
+            positin:{
+                type: Array
+            },
             show:{
             default:false,
             type:Boolean
         }},
+
+        mounted () {
+          this.elementHeight =document.querySelector('.wrapper').getBoundingClientRect().width;  
+        },
         methods: {
             goto(){
                 this.$router.push();
             },
             showMenu(){
                 this.$store.state.menushow = true;
+                this.elementHeight =document.querySelector('.wrapper').getBoundingClientRect().width; 
             },
             hideMenu(){
             this.$store.state.menushow = false;
@@ -43,7 +52,7 @@
 <style lang="scss">
     .wrapper{
         position: absolute;
-        top: 90px;
+        // top: 90px;
         // width:1821px;
         height:471px;
         display:flex;
