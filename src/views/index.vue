@@ -226,7 +226,7 @@ import echarts  from 'echarts';
             }
         }
         .content{
-            flex: 1660;
+            flex: 1060;
             display: flex;
             flex-direction: column;
             margin: 0 0 0 10px;
