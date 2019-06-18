@@ -3,7 +3,7 @@
         <div class="left-panel panel">
             <div class="first item">
                 <span></span>
-                <panelTitle title="人口迁移人数统计"></panelTitle>
+                     <panelTitle title="人口迁移人数统计"></panelTitle>
                 <div class="content">
                     <div class="title">
                         <h2>交通方式</h2>
@@ -70,14 +70,36 @@ import panelTitle from "../components/index/panelTitle.vue";
             .first{
                 flex: 1;
                 .content{
+                    margin-left: 0;
                     .title{
                         // width:133px;
                         // height:16px;
-                        font-size:16px;
-                        font-family:MicrosoftYaHei;
-                        font-weight:400;
-                        color:rgba(255,255,255,1);
-                        line-height:30px;
+                        display: flex;
+                        justify-content: space-between;
+                        h2{
+                            margin-top: .22rem /* 22/100 */;
+                            font-size:16px;
+                            font-family:MicrosoftYaHei;
+                            font-weight:400;
+                            color:rgba(255,255,255,1);
+                            line-height:30px;
+                        }
+                        h2:nth-child(1){
+                            margin-left: .21rem /* 22/100 */;
+                        }
+                        h2:nth-child(2){
+                            margin-left: 1.62rem /* 162/100 */;
+                        }
+                        h2:nth-child(3){
+                            margin-left: .22rem /* 22/100 */;
+                            color: #2056DD;
+                        }
+                        h2:nth-child(4){
+                            margin-right: .27rem /* 22/100 */;
+                             color: #2056DD;
+                        }
+
+
                     }
                 }
             }
@@ -88,6 +110,7 @@ import panelTitle from "../components/index/panelTitle.vue";
             }
             .second{
                 flex: 1;
+             
                 margin-top: .1rem /* 10/100 */;
             }
             .three{

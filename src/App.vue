@@ -260,6 +260,7 @@ import subMenu from "./components/index/subMenu.vue";
 }
 .content{
   flex: 970;
+  margin-bottom: 10px;
 }
 .modal{
   position: absolute;
