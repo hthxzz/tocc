@@ -21,6 +21,12 @@
                 elementHeight: 0
             }
         },
+        created () {
+          this.$axios({"url":""}).then(functin(res){
+             
+              
+          }) 
+        },
         props: {
             positin:{
                 type: Array

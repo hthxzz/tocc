@@ -9,7 +9,7 @@ import axios from "axios";
 // axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 
 let config = {
-  // baseURL: process.env.baseURL || process.env.apiUrl || ""
+  baseURL: process.env.baseURL || process.env.apiUrl || "https://www.easy-mock.com/mock/5d08d65d78c2cb2a1bddf16a/rest/jtyj/"
   // timeout: 60 * 1000, // Timeout
   // withCredentials: true, // Check cross-site Access-Control
 };
