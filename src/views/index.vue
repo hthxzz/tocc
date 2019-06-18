@@ -3,8 +3,10 @@
         <div class="left-panel panel">
             <div class="first item">
                 <span></span>
-                     <panelTitle title="人口迁移人数统计"></panelTitle>
-                <div class="content">
+                <div class="panel-title">
+                    <panelTitle title="人口迁移人数统计"></panelTitle>
+                </div>
+                <div class="panel-content">
                     <div class="title">
                         <h2>交通方式</h2>
                         <h2>迁入</h2>
@@ -17,29 +19,103 @@
                     </div>
                 </div>
             </div>
-            <div class="second item"></div>
-            <div class="three item"></div>
+            <div class="second item">
+                <div class="panel-title">
+                    <panelTitle title="市内居民出行方式统计"></panelTitle>
+                </div>
+                <div class="panel-content">
+
+                </div>              
+            </div>
+            <div class="three item">
+                <div class="panel-title">
+                    <panelTitle title="重点运输车辆运营统计"></panelTitle>
+                </div>
+                <div class="panel-content">
+
+                </div>    
+            </div>
         </div>
         <div class="content">
             <div class="map-wrap"></div>
             <div class="speed"></div>
         </div>
         <div class="right-panel panel">
-            <div class="first item">
-                <span></span>
+            <div class="four item">
+                <div class="panel-title">
+                    <panelTitle title="区域车流量统计"></panelTitle>
+                </div>
+                <div class="panel-content">
+
+                </div>    
             </div>
-            <div class="second item"></div>
-            <div class="three item"></div>
+            <div class="five item">
+                <div class="panel-title">
+                    <panelTitle title="预警预测统计"></panelTitle>
+                </div>
+                <div class="panel-content">
+
+                </div>            
+            </div>
+            <div class="six item">
+                <div class="panel-title">
+                    <panelTitle title="拥堵路段TOP10"></panelTitle>
+                </div>
+                <div class="panel-content">
+
+                </div>       
+            </div>
         </div>
     </div>
 </template>
 
 <script>
 import panelTitle from "../components/index/panelTitle.vue";
+import echarts  from 'echarts';
     export default {
         name: '',
         components: {
             panelTitle
+        },
+        mounted () {
+             var myChart = echarts.init(document.querySelector(".pic-char"));
+             var option = {
+                // title : {
+                //     text: '南丁格尔玫瑰图',
+                //     subtext: '纯属虚构',
+                //     x:'center'
+                // },
+                tooltip : {
+                    trigger: 'item',
+                    position: ['50%', '50%'],
+                    formatter: "{a} <br/>{b} : {c} ({d}%)"
+                },
+                // legend: {
+                //     x : 'center',
+                //     y : 'bottom',
+                //     data:['rose1','rose2','rose3']
+                // },
+                calculable : true,
+                series : [
+
+                    {
+                        name:'交通方式',
+                        type:'pie',
+                        radius : [13, 40],
+                        center : ['50%', '50%'],
+                        roseType : 'area',
+                        data:[
+                            {value:10, name:'火车'},
+                            {value:30, name:'飞机'},
+                            {value:40, name:'汽车'}
+                        ]
+                    }
+                ]
+            };
+
+
+
+             myChart.setOption(option);
         },
         data() {
             return {
@@ -62,19 +138,40 @@ import panelTitle from "../components/index/panelTitle.vue";
             .item{
                 // width:410px;
                 // height:342px;
-                background:rgba(5,12,38,1);
+                display: flex;
+                flex: 1;
+                flex-direction: column;
+                background:rgba(5,12,38,0.4);
                 border:1px solid rgba(32,86,221,1);
                 // opacity:0.4;
+                 .panel-title{
+                    flex:50;
+                    margin:0 20px;
+                }
+                .panel-content{
+                    margin-left: 0;
+                    flex:291;
+                    display: flex;
+                    flex-direction: column;
+                }
             }
-
             .first{
                 flex: 1;
-                .content{
-                    margin-left: 0;
+                flex-direction:column;
+                // .panel-title{
+                //     flex:50;
+                //     margin:0 20px;
+                // }
+                .panel-content{
+                    // margin-left: 0;
+                    // flex:291;
+                    // display: flex;
+                    // flex-direction: column;
                     .title{
                         // width:133px;
                         // height:16px;
                         display: flex;
+                        flex: 23;
                         justify-content: space-between;
                         h2{
                             margin-top: .22rem /* 22/100 */;
@@ -89,17 +186,27 @@ import panelTitle from "../components/index/panelTitle.vue";
                         }
                         h2:nth-child(2){
                             margin-left: 1.62rem /* 162/100 */;
+                            cursor: pointer;
                         }
                         h2:nth-child(3){
                             margin-left: .22rem /* 22/100 */;
                             color: #2056DD;
+                            cursor: pointer;
                         }
                         h2:nth-child(4){
                             margin-right: .27rem /* 22/100 */;
                              color: #2056DD;
+                             
                         }
 
 
+                    }
+                    .char{
+                        flex: 253;
+                        display: flex;
+                    }
+                    .char > div {
+                        flex: 1;
                     }
                 }
             }
@@ -119,7 +226,7 @@ import panelTitle from "../components/index/panelTitle.vue";
             }
         }
         .content{
-            flex: 1060;
+            flex: 1660;
             display: flex;
             flex-direction: column;
             margin: 0 0 0 10px;

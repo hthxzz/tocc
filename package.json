@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "core-js": "^2.6.5",
+    "echarts": "^4.2.1",
     "element-ui": "^2.9.1",
     "postcss-pxtorem": "^4.0.1",
     "vue": "^2.6.10",
@@ -58,7 +59,11 @@
           "font-size",
           "line-height",
           "width",
-          "height"
+          "height",
+          "margin",
+          "margin-top",
+          "margin-bottom",
+          "margin-left"
         ]
       }
     }

@@ -66,9 +66,19 @@ export default new Router({
       component: () => import( /* webpackChunkName: "about" */ './views/About.vue')
     },
     {
-      path: '/cxjc',
-      name: 'cxjc',
-      component: () => import( /* webpackChunkName: "about" */ './views/cxjc.vue')
+      path: '/jmcxjc',
+      name: 'jmcxjc',
+      component: () => import( /* webpackChunkName: "about" */ './views/jcyj/jmcxjc.vue')
+    },
+    {
+      path: '/lwyxjc',
+      name: 'lwyxjc',
+      component: () => import( /* webpackChunkName: "about" */ './views/jcyj/lwyxjc.vue')
+    },
+    {
+      path: '/zdyscl',
+      name: 'zdyscl',
+      component: () => import( /* webpackChunkName: "about" */ './views/jcyj/zdyscl.vue')
     }
     
 
