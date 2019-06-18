@@ -1,10 +1,13 @@
 <template>
-    <div class="wrapper" v-show="show" v-bind:style="{top:positin[1] + 'px',left:positin[0] - elementHeight/2 +'px'}" @mouseover="showMenu" @mouseleave="hideMenu">
-        <span class="tran"></span>
-        <div class="item" v-for="(item, index) in menuList" @click="goto()">
-            <img :src="(item.icon)" alt="" width="100px" height="100px">
-            <h2>{{item.title}}</h2>
+    <div class="wrapper"  v-bind:style="{top:positin[1] + 'px',left:positin[0] - elementHeight/2 +'px',visibility:visibility}" @mouseover="showMenu" @mouseleave="hideMenu">
+        <span class="tran"  v-bind:style="{top:positin[1] -10 + 'px',left:positin[0] - 16 +'px'}"></span>
+        <div class="item" :key="item.id" v-for="(item) in menuList" @click="goto()">
+            <router-link :to="item.route">
+                <img :src="(item.icon)" alt="" width="100px" height="100px">
+                <h2>{{item.title}}</h2>
+            </router-link>
         </div>
+        
     </div>
 </template>
 
@@ -14,9 +17,9 @@
         data() {
             return {
                 menuList:[
-                    {"title":"居民出行监测","bg-pic":"../../image/index/menu/list_bg.png","icon":require("../../assets/index/menu/jmcx.png")},
-                    {"title":"路网运行监测","bg-pic":"../../image/index/menu/list_bg.png","icon":require("../../assets/index/menu/lwyx.png")},
-                    {"title":"重点运输车辆监测","bg-pic":"../../image/index/menu/list_bg.png","icon":require("../../assets/index/menu/zdyscl.png")}
+                    {"id":"1s4hgsdhzdsgz","title":"居民出行监测","bg-pic":"../../image/index/menu/list_bg.png","icon":require("../../assets/index/menu/jmcx.png"),"route":"jmcxjc"},
+                    {"id":"ageaadaf","title":"路网运行监测","bg-pic":"../../image/index/menu/list_bg.png","icon":require("../../assets/index/menu/lwyx.png"),"route":"lwyxjc"},
+                    {"id":"awfwazfaw","title":"重点运输车辆监测","bg-pic":"../../image/index/menu/list_bg.png","icon":require("../../assets/index/menu/zdyscl.png"),"route":"zdyscl"}
                 ],
                 elementHeight: 0
             }
@@ -35,9 +38,15 @@
             default:false,
             type:Boolean
         }},
-
+        computed: {
+            visibility:function () {
+                return this.show ? "visible" : "hidden";
+            }
+        },
         mounted () {
-          this.elementHeight =document.querySelector('.wrapper').getBoundingClientRect().width;  
+          let wrapper = document.querySelector('.wrapper');
+        //   wrapper.style.visibility = 'hidden';
+          this.elementHeight = wrapper.getBoundingClientRect().width;  
         },
         methods: {
             goto(){
@@ -60,20 +69,21 @@
         position: absolute;
         // top: 90px;
         // width:1821px;
-        height:471px;
+        // height:471px;
+        visibility:hidden;
         display:flex;
         background:rgba(5,12,38,1);
         border:1px solid rgba(32,86,221,1);
         opacity:0.9;
         span{
-            position: absolute;
+            position: fixed;
             width: 0;
             height: 0;
             border-width: 0 10px 10px;
             border-style: solid;
             border-color: transparent transparent rgba(32, 86, 221, 1);
             left: 300px;
-            top: -11px;
+            // top: -11px;
         }
         .item{
             width: 1.6rem;
@@ -87,6 +97,7 @@
             &:hover{
                 background: url('../../assets/index/menu/list_bg_h.png') no-repeat;
                 cursor: pointer;
+                 background-size: 100% 100%;
                 transform: scale(1.1);
             }
             img{

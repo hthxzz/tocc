@@ -7,7 +7,10 @@
         <h2>{{time}}</h2>
       </div>
       <div class="menu left" @click="selectSubSys" @mouseover="showMenu" @mouseleave="hideMenu">
-        <div class="index left-actived" ref="index">系统首页</div>
+        <router-link to="/index">
+           <div class="index left-actived" ref="index">系统首页</div>
+        </router-link>
+       
         <div class="jcyj" ref="jcyj">监测预警</div>
         <div class="ztjc" ref="ztjc">专题检测</div>
       </div>
@@ -80,29 +83,31 @@ import subMenu from "./components/index/subMenu.vue";
           formateDate(d){
             return d < 10 ? "0" + d : d;
           },
-          showMenu(){
-            console.log(this.$store.state.menushow);
-
-            this.elementHover = event.srcElement.getBoundingClientRect();
-            // setTimeout(() => {
-
-              this.$store.state.menushow = true;
-            // }, 1000);
-            
+          showMenu(event){
+            let selectEleClass = event.srcElement.classList[0];
+            if (this.contentOfLeftMenu(selectEleClass)) {
+                this.elementHover = event.srcElement.getBoundingClientRect();
+                this.$store.state.menushow = true;
+            }
           },
           hideMenu(){
             this.$store.state.menushow = false;
           },
+          contentOfLeftMenu(selectEleClass){
+              const   leftmenu = ["jcyj","ztjc"];
+              return  leftmenu.indexOf(selectEleClass) != -1 ? true:false;
+          },
+          contentOfRightMenu(selectEleClass){
+              const   rightmenu = ["yjxt","xxfb","fzjc"];
+              return  rightmenu.indexOf(selectEleClass) != -1 ? true:false;
+          },          
           selectSubSys(event){
             var  refs = this.$refs,
-            leftmenu = ["index","jcyj","ztjc"],
-            rightmenu = ["yjxt","xxfb","fzjc"],
+            
             selectEleClass = event.srcElement.classList[0],
             //选中的元素是否是菜单
-            lflag = leftmenu.indexOf(selectEleClass) != -1,
-            rflag = rightmenu.indexOf(selectEleClass) != -1;
-
-
+            lflag = contentOfLeftMenu(selectEleClass),
+            rflag = contentOfRightMenu(selectEleClass) != -1;
          
             // refs.index.classList.remove("left-actived");
             // refs.jcyj.classList.remo
@@ -175,7 +180,7 @@ import subMenu from "./components/index/subMenu.vue";
         width: 360px;
         flex: 400;
          @include center;
-        >div{
+        >div, a > div{
           width:1.11rem /* 111/100 */;
           height:.36rem /* 36/100 */;
           font-size:.18rem /* 18/100 */;
@@ -199,7 +204,7 @@ import subMenu from "./components/index/subMenu.vue";
       .left{
         flex: 425;
       }
-      .left > div{
+      .left > div, a > div{
           background: url('./assets/left_nav.png') no-repeat;
           background-size: 100% 100%;
       }
@@ -268,6 +273,7 @@ import subMenu from "./components/index/subMenu.vue";
 }
 .content{
   flex: 970;
+  margin-bottom: 10px;
 }
 .modal{
   position: absolute;
