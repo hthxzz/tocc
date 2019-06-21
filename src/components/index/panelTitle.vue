@@ -31,7 +31,7 @@
         flex-direction: column;
         border-bottom: 1px solid rgba(32,86,221,1);
         .wrap{
-            width: 4.1rem;
+            // width: 4.1rem;
             // height: .47rem;
             display: flex;
             margin-top:23px;
