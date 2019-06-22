@@ -79,8 +79,12 @@ export default new Router({
       path: '/zdyscl',
       name: 'zdyscl',
       component: () => import( /* webpackChunkName: "about" */ './views/jcyj/zdyscl.vue')
-    }
-    
+    },
+     {
+       path: '/dmjtyxjc',
+       name: 'dmjtyxjc',
+       component: () => import( /* webpackChunkName: "about" */ './views/jcyj/dmjtyxjc.vue')
+    }   
 
   ]
 })

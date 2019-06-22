@@ -14,7 +14,9 @@
         <div class="jcyj" ref="jcyj">监测预警</div>
         <div class="ztjc" ref="ztjc">专题检测</div>
       </div>
-      <div class="logo"></div>
+      <div class="logo">
+        <img src="./assets/logo.png" alt="" srcset="">
+      </div>
       <div class="menu right" @click="selectSubSys">
         <div class="yjxt" ref="yjxt">应急协同</div>
         <div class="xxfb" ref="xxfb">信息发布</div>
@@ -217,8 +219,14 @@ import subMenu from "./components/index/subMenu.vue";
       }
       .logo{
         flex: 616;
-        background: url('./assets/logo.png') no-repeat;
+        // background: url('./assets/logo.png') no-repeat;
         background-size: 100% 100%;
+        width: 100%;
+        height: 100%;
+        img{
+          width: 100%;
+          height: 100%;
+        }
       }
       .user{
         flex: 263;
