@@ -24,7 +24,7 @@
                     <panelTitle title="市内居民出行方式统计"></panelTitle>
                 </div>
                 <div class="panel-content">
-
+                    <jmcxfs></jmcxfs>
                 </div>              
             </div>
             <div class="three item">
@@ -32,13 +32,25 @@
                     <panelTitle title="重点运输车辆运营统计"></panelTitle>
                 </div>
                 <div class="panel-content">
-
+                    <!-- <div> -->
+                         <KeyTransportVehicle />
+                    <!-- </div> -->
+                   
                 </div>    
             </div>
         </div>
         <div class="content">
-            <div class="map-wrap"></div>
-            <div class="speed"></div>
+            <div class="map-wrap">
+                <mapWrap></mapWrap>
+            </div>
+            <div class="speed">
+                <div class="panel-title">
+                    <panelTitle title="路段平均车速"></panelTitle>
+                </div>
+                <div class="panel-content">
+                    <gauge></gauge>
+                </div>   
+            </div>
         </div>
         <div class="right-panel panel">
             <div class="four item">
@@ -46,7 +58,7 @@
                     <panelTitle title="区域车流量统计"></panelTitle>
                 </div>
                 <div class="panel-content">
-
+                    
                 </div>    
             </div>
             <div class="five item">
@@ -62,7 +74,7 @@
                     <panelTitle title="拥堵路段TOP10"></panelTitle>
                 </div>
                 <div class="panel-content">
-
+                    <ydld></ydld>
                 </div>       
             </div>
         </div>
@@ -71,11 +83,21 @@
 
 <script>
 import panelTitle from "../components/index/panelTitle.vue";
+import jmcxfs from "../components/index/jmcxfs.vue";
+import mapWrap from "../components/index/mapWrap.vue";
+import gauge from "../components/index/gauge.vue";
+import KeyTransportVehicle from "../components/index/KeyTransportVehicle.vue";
+import ydld from "../components/index/ydld.vue";
 import echarts  from 'echarts';
     export default {
         name: '',
         components: {
-            panelTitle
+            panelTitle,
+            jmcxfs,
+            mapWrap,
+            gauge,
+            KeyTransportVehicle,
+            ydld
         },
         mounted () {
              var myChart = echarts.init(document.querySelector(".pic-char"));
@@ -141,7 +163,9 @@ import echarts  from 'echarts';
                 display: flex;
                 flex: 1;
                 flex-direction: column;
-                background:rgba(5,12,38,0.4);
+                background:rgba(5,12,38,0.4) no-repeat;
+                background-position: bottom center;
+                background-image: url('../assets/index/index/echart_bg.png') ;
                 border:1px solid rgba(32,86,221,1);
                 // opacity:0.4;
                  .panel-title{
@@ -234,18 +258,32 @@ import echarts  from 'echarts';
                 flex: 681;
                 // width:1060px;
                 // height:682px;
-                background:radial-gradient(circle,rgba(32,86,221,1),rgba(7,22,54,1));
+                background:radial-gradient(circle,rgba(32,86,221,.4),rgba(7,22,54,.4));
                 border:1px solid rgba(32,86,221,1);
-                opacity:0.4;
             }
             .speed{
                 flex: 268;
                 margin-top: 10px;
                 // width:1060px;
                 // height:269px;
-                background:rgba(5,12,38,1);
+                display: flex;
+                flex-direction: column;
+                background:rgba(5,12,38,.4);
                 border:1px solid rgba(32,86,221,1);
-                opacity:0.4;
+                // opacity:0.4;
+                .panel-title{
+                    flex: 47;
+                }
+                .panel-content{
+                    display: flex;
+                    flex-direction: row;
+                    // height: 100%;
+                    flex: 211;
+                    .gauge{
+                        flex: 1;
+                        height: 100%;
+                    }
+                }
             }
         }
         .right-panel{

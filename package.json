@@ -63,7 +63,11 @@
           "margin",
           "margin-top",
           "margin-bottom",
-          "margin-left"
+          "margin-left",
+          "box-shadow",
+          "text-shadow",
+          "top",
+          "left"
         ]
       }
     }

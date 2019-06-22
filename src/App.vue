@@ -149,6 +149,10 @@ import subMenu from "./components/index/subMenu.vue";
       justify-content: center;
       align-items: center;
     }
+    .content{
+      flex: 970;
+      margin-bottom: 10px;
+    }
     #nav{
       display: flex;
       // height: 1.1rem /* 110/100 */;
@@ -279,10 +283,7 @@ import subMenu from "./components/index/subMenu.vue";
   background: url('./assets/right_nav_h.png')  no-repeat !important;
   background-size: 100% 100%!important;
 }
-.content{
-  flex: 970;
-  margin-bottom: 10px;
-}
+
 .modal{
   position: absolute;
 }
