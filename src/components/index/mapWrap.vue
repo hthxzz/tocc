@@ -23,7 +23,9 @@
                     </div>
                 </div>
                 <div class="item mid">
-                    <div class="pie"></div>
+                    <div class="pie">
+                        <TrafficIncident></TrafficIncident>
+                    </div>
                 </div>
                 <div class="item bott">
                     <span class="content alerm">告警</span>
@@ -40,8 +42,12 @@
 </template>
 
 <script>
+import TrafficIncident from "./TrafficIncident.vue";
     export default {
         name: '',
+        components: {
+            TrafficIncident
+        },
         data() {
             return {
                 tanfficNumber: ["6","2","1","3"]
@@ -146,7 +152,10 @@
                     }
                 }
                 .mid{
-
+                    .pie{
+                        width: 100%;
+                        height: 100%;
+                    }
                 }
                 .bott{
                     border: 0 !important;

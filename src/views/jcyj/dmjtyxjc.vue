@@ -51,12 +51,21 @@ import panelTitle from "../../components/index/panelTitle.vue";
             flex-direction: column;
             .wrap-item{
                 height: 100%;
-                .item{
-                    flex: 1;
-                    background:rgba(5,12,38,.4);
-                    border:1px solid rgba(32,86,221,.4);
-                    // opacity:0.4;
+                .aaa{
+                    height: 100%;
+                    .item{
+                        flex: 1;
+                        
+                        background:rgba(5,12,38,.4);
+                        border:1px solid rgba(32,86,221,.4);
+                        height: calc((100% - 40px)/3);
+                        // opacity:0.4;
+                    }
+                    .item{
+                        margin-top: 10px;
+                    }
                 }
+
             }
 
         }

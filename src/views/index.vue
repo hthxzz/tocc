@@ -15,7 +15,9 @@
                     </div>
                     <div class="char">
                         <div class="pic-char"></div>
-                        <div class="bar"></div>
+                        <div class="bar">
+                            <outOf></outOf>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -58,7 +60,7 @@
                     <panelTitle title="区域车流量统计"></panelTitle>
                 </div>
                 <div class="panel-content">
-                    
+                    <trafficFlow></trafficFlow>
                 </div>    
             </div>
             <div class="five item">
@@ -66,7 +68,7 @@
                     <panelTitle title="预警预测统计"></panelTitle>
                 </div>
                 <div class="panel-content">
-
+                    <EarlyWarning></EarlyWarning>
                 </div>            
             </div>
             <div class="six item">
@@ -88,6 +90,11 @@ import mapWrap from "../components/index/mapWrap.vue";
 import gauge from "../components/index/gauge.vue";
 import KeyTransportVehicle from "../components/index/KeyTransportVehicle.vue";
 import ydld from "../components/index/ydld.vue";
+import serchPanel from "../components/common/serchPanel.vue";
+import trafficFlow from "../components/index/trafficFlow.vue";
+import EarlyWarning from "../components/index/EarlyWarning.vue";
+import outOf from "../components/index/outOf.vue";
+
 import echarts  from 'echarts';
     export default {
         name: '',
@@ -97,7 +104,12 @@ import echarts  from 'echarts';
             mapWrap,
             gauge,
             KeyTransportVehicle,
-            ydld
+            ydld,
+            serchPanel,
+            trafficFlow,
+            EarlyWarning,
+            outOf
+            
         },
         mounted () {
              var myChart = echarts.init(document.querySelector(".pic-char"));

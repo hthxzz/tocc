@@ -29,6 +29,15 @@ import echarts  from 'echarts';
                 tooltip : {
                     formatter: "{a} <br/>{c} {b}"
                 },
+                title:{
+                    text:'一环',
+                    left:'43%',
+                    bottom:'1%',
+                    textStyle:{
+                        color : '#FFFFFF',
+                        fontSize : '14'
+                    }
+                },
                 series : [
                     {
                         name:'速度',
@@ -46,8 +55,8 @@ import echarts  from 'echarts';
                             }
                         },
                         pointer:{
-                            show:false,
-                            width:100
+                            // show:false,
+                            width:6
                         },
                         axisLabel: {            // 坐标轴小标记
                             // textStyle: {       // 属性lineStyle控制线条样式
@@ -73,10 +82,6 @@ import echarts  from 'echarts';
                                 shadowColor : '#fff', //默认透明
                                 shadowBlur: 10
                             }
-                        },
-                        pointer: {           // 分隔线
-                            shadowColor : '#fff', //默认透明
-                            shadowBlur: 5
                         },
                         // title : {
                         //     textStyle: {       // 其余属性默认使用全局文本样式，详见TEXTSTYLE
@@ -107,18 +112,18 @@ import echarts  from 'echarts';
                 ]
             };
 
-                 myChart1.setOption(option);
-                myChart2.setOption(option);
-                myChart3.setOption(option);
-                myChart4.setOption(option);
-                myChart5.setOption(option);
-            setInterval(function (){
-                // option.series[0].data[0].value = (Math.random()*100).toFixed(2) - 0;
                 // myChart1.setOption(option);
                 // myChart2.setOption(option);
                 // myChart3.setOption(option);
                 // myChart4.setOption(option);
                 // myChart5.setOption(option);
+            setInterval(function (){
+                option.series[0].data[0].value = (Math.random()*100).toFixed(2) - 0;
+                myChart1.setOption(option);
+                myChart2.setOption(option);
+                myChart3.setOption(option);
+                myChart4.setOption(option);
+                myChart5.setOption(option);
             },2000)
         }
         
