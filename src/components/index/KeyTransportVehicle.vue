@@ -62,7 +62,7 @@ var placeHolderStyle = {
         color: '#393d50'
     }
 };
-option = {
+var option = {
     backgroundColor: '#142058',
     // title: {
     //     text: '匹配度',
@@ -78,7 +78,7 @@ option = {
         trigger: 'item',
         show: true,
         formatter: "{b} : <br/>{d}%",
-        backgroundColor: 'rgba(0,0,0,0.7)', // 背景
+        // backgroundColor: 'rgba(0,0,0,0.7)', // 背景
         padding: [8, 10], //内边距
         extraCssText: 'box-shadow: 0 0 3px rgba(255, 255, 255, 0.4);', //添加阴影
     },
@@ -134,7 +134,7 @@ option = {
             name: 'Line 2',
             type: 'pie',
             clockWise: false,
-            radius: [146, 160],
+            radius: [60, 70],
             center:['50%','50%'],
             itemStyle: dataStyle,
             hoverAnimation: false,
@@ -168,7 +168,7 @@ option = {
             name: 'Line 3',
             type: 'pie',
             clockWise: false,
-            radius: [106, 120],
+            radius: [45, 55],
             center:['50%','50%'],
             itemStyle: dataStyle,
             hoverAnimation: false,
@@ -202,7 +202,7 @@ option = {
             name: 'Line 4',
             type: 'pie',
             clockWise: false,
-            radius: [66, 80],
+            radius: [21, 31],
             center:['50%','50%'],
             itemStyle: dataStyle,
             hoverAnimation: false,
@@ -253,6 +253,10 @@ myChart1.setOption(option);
     flex: 1;
     display: flex;
     flex-direction: column;
+    .keyVehicle{
+        width: 100%;
+        height: 100%;
+    }
     .wrap{
         flex: 1;
         .content{

@@ -28,16 +28,16 @@ import echarts  from 'echarts';
                         show:false
                     }
                 },
-                legend:{
-                    data:["当前","历史"],
-                    right:'right',
-                    top:'top',
-                    padding:0,
-                    width:200,
-                    // textStyle:{
-                    //     fontSize:'10%'
-                    // }
-                },
+                // legend:{
+                //     data:["当前","历史"],
+                //     right:'right',
+                //     top:'top',
+                //     padding:0,
+                //     width:200,
+                //     // textStyle:{
+                //     //     fontSize:'10%'
+                //     // }
+                // },
                 yAxis: {
                     type: 'value',
                     axisLabel:{

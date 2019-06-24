@@ -235,18 +235,17 @@ import subMenu from "./components/index/subMenu.vue";
       .user{
         flex: 263;
         display: flex;
+        align-items: center;
         .icon{
           flex: 1
         }
         h2{
-          flex: 1;
+          flex: 3;
           width:127px;
-          height:12px;
           font-size:12px;
           font-family:MicrosoftYaHei;
           font-weight:400;
           color:rgba(255,255,255,1);
-          line-height:30px;
         }
         .logout{
           flex: 1

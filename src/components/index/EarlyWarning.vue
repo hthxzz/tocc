@@ -31,8 +31,15 @@ import echarts  from 'echarts';
                                     { text: '道路拥堵', max: 72 }
                                 ],
                                 center: ['50%', '50%'],
-                                radius: '50%'
+                                radius: '70%',
+                                splitArea:{
+                                    areaStyle:{
+                                        color:'rgba(32,86,221,.4)'
+                                    }
+                            
                             }
+                            }
+                        
                         ],
                         series: [
 
@@ -42,7 +49,7 @@ import echarts  from 'echarts';
                                 data: [
                     
                                     {
-                                        value: [90, 113, 140, 30, 70, 60],
+                                        value: [90, 113, 100, 30, 70, 60],
                                         areaStyle: {
                                             normal: {
                                                 opacity: 0.9,
