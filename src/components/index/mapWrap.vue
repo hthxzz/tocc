@@ -37,16 +37,20 @@
                 </div>
             </div>
         </div>
-        <div class="right"></div>
+        <div class="right">
+            <cdMap></cdMap>
+        </div>
     </div>
 </template>
 
 <script>
 import TrafficIncident from "./TrafficIncident.vue";
+import cdMap from "./cdMap.vue";
     export default {
         name: '',
         components: {
-            TrafficIncident
+            TrafficIncident,
+            cdMap
         },
         data() {
             return {

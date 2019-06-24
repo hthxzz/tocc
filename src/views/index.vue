@@ -221,7 +221,7 @@ import echarts  from 'echarts';
                             margin-left: .21rem /* 22/100 */;
                         }
                         h2:nth-child(2){
-                            margin-left: 1.62rem /* 162/100 */;
+                            // margin-left: 1.62rem /* 162/100 */;
                             cursor: pointer;
                         }
                         h2:nth-child(3){
@@ -251,7 +251,7 @@ import echarts  from 'echarts';
                 content: '';
                 height: 1px;
             }
-            .second{
+            .second, .five,.six{
                 flex: 1;
              
                 margin-top: .1rem /* 10/100 */;

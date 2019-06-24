@@ -31,7 +31,7 @@ import echarts  from 'echarts';
                                     { text: '道路拥堵', max: 72 }
                                 ],
                                 center: ['50%', '50%'],
-                                radius: 120
+                                radius: '50%'
                             }
                         ],
                         series: [
