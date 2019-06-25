@@ -63,7 +63,7 @@ var placeHolderStyle = {
     }
 };
 var option = {
-    backgroundColor: '#142058',
+    // backgroundColor: '#142058',
     // title: {
     //     text: '匹配度',
     //     x: 'center',
@@ -97,11 +97,12 @@ var option = {
             name: 'Line 1',
             type: 'pie',
             clockWise: false,
-            radius: ['186', 200],
+            radius: ['75%', '85%'],
             center:['50%','50%'],
             itemStyle: dataStyle,
             hoverAnimation: false,
             startAngle: 90,
+            clockWise: true,
             label:{
                 borderRadius:'10',
             },
@@ -110,13 +111,14 @@ var option = {
                     name: '四级匹配度',
                     itemStyle: {
                         normal: {
-                            color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-                                offset: 0,
-                                color:color[0]
-                            }, {
-                                offset: 1,
-                                color: color[1]
-                            }])
+                            // color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                            //     offset: 0,
+                            //     color:color[0]
+                            // }, {
+                            //     offset: 1,
+                            //     color: color[1]
+                            // }])
+                            color:'rgba(32, 86, 221, 1)'
                         }
                     }
                 },
@@ -134,9 +136,10 @@ var option = {
             name: 'Line 2',
             type: 'pie',
             clockWise: false,
-            radius: [60, 70],
+            radius: ['60%', '70%'],
             center:['50%','50%'],
             itemStyle: dataStyle,
+            clockWise: true,
             hoverAnimation: false,
             startAngle: 90,
             data: [{
@@ -144,13 +147,7 @@ var option = {
                     name: '三级匹配度',
                     itemStyle: {
                         normal: {
-                            color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-                                offset: 0,
-                                color: color[2]
-                            }, {
-                                offset: 1,
-                                color: color[3]
-                            }])
+                            color: 'rgba(255, 255, 0, 1)'
                         }
                     }
                 },
@@ -168,8 +165,9 @@ var option = {
             name: 'Line 3',
             type: 'pie',
             clockWise: false,
-            radius: [45, 55],
+            radius: ['45%', '55%'],
             center:['50%','50%'],
+            clockWise: true,
             itemStyle: dataStyle,
             hoverAnimation: false,
             startAngle: 90,
@@ -178,13 +176,7 @@ var option = {
                     name: '二级匹配度',
                     itemStyle: {
                         normal: {
-                            color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-                                offset: 0,
-                                color: color[4]
-                            }, {
-                                offset: 1,
-                                color: color[5]
-                            }]),
+                            color: 'rgba(0, 176, 80, 1)'
                         }
                     }
                 },
@@ -202,23 +194,18 @@ var option = {
             name: 'Line 4',
             type: 'pie',
             clockWise: false,
-            radius: [21, 31],
+            radius: ['30%', '40%'],
             center:['50%','50%'],
             itemStyle: dataStyle,
             hoverAnimation: false,
+            clockWise: true,
             startAngle: 90,
             data: [{
                     value: 30,
                     name: '二级匹配度',
                     itemStyle: {
                         normal: {
-                            color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-                                offset: 0,
-                                color: color[4]
-                            }, {
-                                offset: 1,
-                                color: color[5]
-                            }]),
+                            color: 'rgba(114, 246, 250, 1)'
                         }
                     }
                 },

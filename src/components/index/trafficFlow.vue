@@ -20,9 +20,10 @@ import echarts  from 'echarts';
                 xAxis: {
                     type: 'category',
                     data: ["绕城内","绕城外","三环内", "三环外", "进城","出城"],
+                    nameGap :'1',
                     axisLabel:{
                         color:'#fff',
-                        fontSize:'10%'
+                        fontSize:'16%'
                     },
                     splitLine:{
                         show:false
@@ -50,7 +51,7 @@ import echarts  from 'echarts';
                 grid:{
                     left:'11%',
                     right:'6%',
-                    bottom:'11%',
+                    bottom:'16%',
                     top:'6%'
                 },
                 series: [{

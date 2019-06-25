@@ -15,11 +15,16 @@
         </div>
         <div class="mid"></div>
         <div class="right panel">
-            <div class="wrap-item">
+            <panel>
+                <div class="test">1</div>
+                <div class="test">2</div>
+                <div class="test">3</div>
+            </panel>
+            <!-- <div class="wrap-item">
                 <div class="item right-top">4</div>
                 <div class="item right-mid">5</div>
                 <div class="item right-bottom">6</div>
-            </div>
+            </div> -->
 
         </div>
     </div>
@@ -27,10 +32,12 @@
 
 <script>
 import panelTitle from "../../components/index/panelTitle.vue";
+import panel from "../../components/common/panel.vue";
     export default {
         name: '',
         components: {
-            panelTitle
+            panelTitle,
+            panel
         },
         data() {
             return {
@@ -74,9 +81,20 @@ import panelTitle from "../../components/index/panelTitle.vue";
         }
         .mid{
             flex: 1011;
+            margin: 10px;
+            border: 1px solid rgba(32, 86, 221, 0.4);
         }  
         .right{
             flex: 410;
+            margin: 10px;
+            max-width: 350px;
+            min-width: 450px;
+            .test{
+                // width: 100%;
+                height: 600px;
+                 border: 1px solid rgba(32, 86, 221, 0.4);
+                 margin-top: 10px;
+            }
         }      
 
 

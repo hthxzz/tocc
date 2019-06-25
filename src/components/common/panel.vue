@@ -1,0 +1,48 @@
+<template>
+    <div class="container" ref="container">
+        <div class="wrap" ref="wrap">
+            <slot ref="slot"></slot>
+        </div>
+    </div>
+</template>
+
+<script>
+    export default {
+        name: '',
+        data() {']'
+            return {
+                app:0,
+                nav:0
+            }
+        },
+        beforeMount () {
+          console.log('aaaaaaaaa');
+           this.app = document.querySelector("#app").getBoundingClientRect().height;
+           this.nav = document.querySelector("#nav").getBoundingClientRect().height;
+            
+        },
+        mounted () {
+            let containerElement = this.$refs.container;
+            let containerElementStyle = containerElement.getBoundingClientRect();
+            
+            containerElement.style.height = this.app - this.nav +"px";
+            containerElement.style.width = containerElementStyle.width - 20 +'px';
+            this.$refs.wrap.style.width = containerElementStyle.width +'px'
+            // containerElement.style.width = containerElementStyle.width +"px";
+            console.log( this.$refs.slot);
+            
+        }
+    }
+</script>
+
+<style lang="scss" scoped>
+    .container{
+        width:100%;
+        height:100%;
+        overflow: hidden;
+        .wrap{
+            height: 100%;
+            overflow-y: scroll;
+        }
+    }
+</style>

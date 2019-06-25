@@ -20,8 +20,16 @@ import echarts  from 'echarts';
             var option  = {
 
                         radar: [
-
+                      
                             {
+                                name:{
+                                    textStyle: {
+                                        color: '#fff',
+                                        backgroundColor: 'rgba(32, 86, 221, 1)',
+                                        borderRadius: 3,
+                                        padding: [1, 1]
+                                }
+                                },
                                 indicator: [
                                     { text: '恶劣天气', max: 150 },
                                     { text: '出租汽车异常', max: 150 },
@@ -31,7 +39,7 @@ import echarts  from 'echarts';
                                     { text: '道路拥堵', max: 72 }
                                 ],
                                 center: ['50%', '50%'],
-                                radius: '70%',
+                                radius: '60%',
                                 splitArea:{
                                     areaStyle:{
                                         color:'rgba(32,86,221,.4)'

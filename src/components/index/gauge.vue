@@ -32,8 +32,8 @@ import echarts  from 'echarts';
                 },
                 title:{
                     text:'一环',
-                    left:'43%',
-                    bottom:'1%',
+                    left:'39%',
+                    bottom:'-6%',
                     textStyle:{
                         color : '#FFFFFF',
                         fontSize : '14'

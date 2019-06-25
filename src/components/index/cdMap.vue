@@ -208,7 +208,8 @@ var chinaGeoCoordMap = {
             },
             geo: {
                 map: 'cd',
-                zoom: 1.2,
+                zoom: 6,
+                center:[104.059702,30.633487],
                 label: {
                     emphasis: {
                         show: false

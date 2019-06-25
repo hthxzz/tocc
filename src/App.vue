@@ -24,7 +24,7 @@
       </div>
       <div class="user">
         <div class="icon">
-
+          <img src="./assets/user.png" alt="" >
         </div>
         <h2>你好Administrater</h2>
         <div class="logout">
@@ -227,6 +227,7 @@ import subMenu from "./components/index/subMenu.vue";
         background-size: 100% 100%;
         width: 100%;
         height: 100%;
+        display: flex;
         img{
           width: 100%;
           height: 100%;
@@ -237,7 +238,13 @@ import subMenu from "./components/index/subMenu.vue";
         display: flex;
         align-items: center;
         .icon{
-          flex: 1
+          flex: 1;
+          display: flex;
+          justify-content: flex-end;
+          img{
+            width:16px;
+            height:18px;
+          }
         }
         h2{
           flex: 3;
@@ -266,6 +273,7 @@ import subMenu from "./components/index/subMenu.vue";
   color: #2c3e50;
   height: 100vh;
   width: 100vw;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   background: url('./assets/all_bg.png') no-repeat;

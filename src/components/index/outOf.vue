@@ -13,10 +13,10 @@
                 <div class="bar"><span></span><span></span></div>
                 <div class="content"><span>河南</span><span>1231</span></div>
             </div>
-            <div class="item">
+            <!-- <div class="item">
                 <div class="bar"><span></span><span></span></div>
                 <div class="content"><span>辽宁</span><span>831</span></div>
-            </div>
+            </div> -->
             <!-- <div class="item">
                 <div class="bar"><span></span><span></span></div>
                 <div><span>河北</span><span>3231</span></div>
@@ -66,7 +66,7 @@
                         width:66px;
                         height:8px;
                         left: 32px;
-                        top: 7px;
+                        top: 10px;
                         display: inline-block;
                         position: absolute;
                         background:linear-gradient(-90deg,rgba(107,223,232,1),rgba(32,86,221,1));
