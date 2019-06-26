@@ -1,6 +1,6 @@
 <template>
-    <div class="container" ref="container">
-        <div class="wrap" ref="wrap">
+    <div class="panel-container" ref="container">
+        <div class="panel-wrap" ref="wrap">
             <slot ref="slot"></slot>
         </div>
     </div>
@@ -9,7 +9,7 @@
 <script>
     export default {
         name: '',
-        data() {']'
+        data() {
             return {
                 app:0,
                 nav:0
@@ -37,12 +37,12 @@
 </script>
 
 <style lang="scss" scoped>
-    .container{
+    .panel-container{
         width:100%;
         height:100%;
         max-width: 410px;
         overflow: hidden;
-        .wrap{
+        .panel-wrap{
             height: 100%;
             overflow-y: scroll;
         }

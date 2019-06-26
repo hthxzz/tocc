@@ -15,16 +15,9 @@
         <div class="mid"></div>
         <div class="right panel">
             <panel>
-                <div class="test">
-                    <panelTitle title="区域车流量统计"></panelTitle>
-                    <PanelContent>
-                        <div class="pc">aaaaaaaaaaaaaaaa</div>
-                    </PanelContent>
-                    
-                </div>  
-                
-                <div class="test">2</div>
-                <div class="test">3</div>
+                <PanelItem>
+                    <div class="content">aaaaaaaaaaaaaaaaa</div>
+                </PanelItem>
             </panel>
             <!-- <div class="wrap-item">
                 <div class="item right-top">4</div>
@@ -39,13 +32,13 @@
 <script>
 import panelTitle from "../../components/index/panelTitle.vue";
 import panel from "../../components/common/panel.vue";
-import PanelContent from "../../components/common/PanelContent.vue";
+import PanelItem from "../../components/common/PanelItem.vue";
     export default {
         name: '',
         components: {
             panelTitle,
             panel,
-            PanelContent
+            PanelItem
         },
         data() {
             return {
@@ -92,6 +85,10 @@ import PanelContent from "../../components/common/PanelContent.vue";
             margin: 10px;
             border: 1px solid rgba(32, 86, 221, 0.4);
         }  
+        .content{
+            height: 100px;
+            color: aliceblue;
+        }
         .right{
             flex: 410;
             margin: 10px;

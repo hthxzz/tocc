@@ -5,7 +5,7 @@
             <h2>{{title}}</h2>
             <span class="tip"></span>
             <span class="info"></span>
-            <span class="toggle">a</span>
+            <img src="../../image/common/up_slide.png" :style="{transform:rotate}" class="toggle" ref="toggle" @click="showPanel" alt="">
         </div>
         
         <!-- <div class="line">
@@ -20,7 +20,19 @@
         props: ["title",""],
         data() {
             return {
+                rotate:''
+            }
+        },
+        methods:{
+            showPanel(){
+                console.log('aaaaaaaaa');
+                if (this.rotate == 'rotate(180deg)') {
+                    this.rotate = 'rotate(0deg)'
+                }else{
+                    this.rotate = 'rotate(180deg)';
+                }
                 
+                this.$emit("showPanel")
             }
         }
     }
@@ -30,7 +42,7 @@
     .panel-title-container{
         display: flex;
         flex-direction: column;
-        border-bottom: 1px solid rgba(32,86,221,1);
+        border-bottom: 1px solid rgba(32,86,221,.4);
         .wrap{
             // width: 4.1rem;
             // height: .47rem;
@@ -60,7 +72,7 @@
             }
             h2{
                 // width:1.52rem;
-                height:.19rem;
+                // height:.19rem;
                 // margin-top: .23rem;
                 margin-left: 10px;
                 display: inline-block;
@@ -85,7 +97,8 @@
                 font-size: 12px;
                 color: aliceblue;
                 position: absolute;
-                right: 20px;
+                right: 0;
+                cursor: pointer;
             }
         }
         .line{
