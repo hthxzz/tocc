@@ -17,10 +17,11 @@
             <panel>
                 <div class="test">
                     <panelTitle title="区域车流量统计"></panelTitle>
-                    <div class="panel-content">
-                    <div class="pc">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</div>
+                    <PanelContent>
+                        <div class="pc">aaaaaaaaaaaaaaaa</div>
+                    </PanelContent>
+                    
                 </div>  
-                </div>
                 
                 <div class="test">2</div>
                 <div class="test">3</div>
@@ -38,11 +39,13 @@
 <script>
 import panelTitle from "../../components/index/panelTitle.vue";
 import panel from "../../components/common/panel.vue";
+import PanelContent from "../../components/common/PanelContent.vue";
     export default {
         name: '',
         components: {
             panelTitle,
-            panel
+            panel,
+            PanelContent
         },
         data() {
             return {
