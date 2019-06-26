@@ -11,12 +11,17 @@
                 </div>
           
             </div>
-
         </div>
         <div class="mid"></div>
         <div class="right panel">
             <panel>
-                <div class="test">1</div>
+                <div class="test">
+                    <panelTitle title="区域车流量统计"></panelTitle>
+                    <div class="panel-content">
+                    <div class="pc">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</div>
+                </div>  
+                </div>
+                
                 <div class="test">2</div>
                 <div class="test">3</div>
             </panel>
@@ -87,12 +92,13 @@ import panel from "../../components/common/panel.vue";
         .right{
             flex: 410;
             margin: 10px;
-            max-width: 350px;
-            min-width: 450px;
+            // max-width: 350px;
+            // min-width: 450px;
             .test{
                 // width: 100%;
                 height: 600px;
                  border: 1px solid rgba(32, 86, 221, 0.4);
+                 background:rgba(5,12,38,.4);
                  margin-top: 10px;
             }
         }      

@@ -275,6 +275,7 @@ import subMenu from "./components/index/subMenu.vue";
   width: 100vw;
   overflow: hidden;
   display: flex;
+  font-size: 16px;
   flex-direction: column;
   background: url('./assets/all_bg.png') no-repeat;
   background-size: 100% 100%;

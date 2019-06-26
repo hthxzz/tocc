@@ -6,6 +6,8 @@
 
 <script>
 import echarts  from 'echarts';
+import  '../../untils/color-theme.js';
+// import 'echarts/theme/shine';
     export default {
         name: '',
         data() {
@@ -14,7 +16,7 @@ import echarts  from 'echarts';
             }
         },
         mounted () {
-            var myChart = echarts.init(document.querySelector(".trafficFlow"));
+            var myChart = echarts.init(document.querySelector(".trafficFlow"),'color-theme');
             var option = {
 
                 xAxis: {

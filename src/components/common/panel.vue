@@ -26,8 +26,9 @@
             let containerElementStyle = containerElement.getBoundingClientRect();
             
             containerElement.style.height = this.app - this.nav +"px";
-            containerElement.style.width = containerElementStyle.width - 20 +'px';
-            this.$refs.wrap.style.width = containerElementStyle.width +'px'
+            containerElement.style.width = containerElementStyle.width - 17 +'px';
+            this.$refs.wrap.style.width = containerElementStyle.width +'px';
+            this.$refs.wrap.style.maxWidth = containerElementStyle.width +'px';
             // containerElement.style.width = containerElementStyle.width +"px";
             console.log( this.$refs.slot);
             
@@ -39,6 +40,7 @@
     .container{
         width:100%;
         height:100%;
+        max-width: 410px;
         overflow: hidden;
         .wrap{
             height: 100%;

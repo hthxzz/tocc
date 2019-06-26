@@ -1,10 +1,11 @@
 <template>
-    <div class="container">
+    <div class="panel-title-container">
         <div class="wrap">
             <span class="pro"></span>
             <h2>{{title}}</h2>
             <span class="tip"></span>
             <span class="info"></span>
+            <span class="toggle">a</span>
         </div>
         
         <!-- <div class="line">
@@ -26,7 +27,7 @@
 </script>
 
 <style lang="scss" scoped>
-    .container{
+    .panel-title-container{
         display: flex;
         flex-direction: column;
         border-bottom: 1px solid rgba(32,86,221,1);
@@ -34,6 +35,7 @@
             // width: 4.1rem;
             // height: .47rem;
             display: flex;
+            max-width: 4.1rem;
             margin-top:23px;
             margin-bottom:8px;
             position: relative;
@@ -74,10 +76,16 @@
                 //  margin-top: .23rem;
                 //  margin-right: 20px;
                 position: absolute;
-                right: 20px;
+                right: 30px;
                 top: 3px;
                 background: url('../../assets/index/index/more.png') no-repeat;
                 background-size: 100% 100%;
+            }
+            .toggle{
+                font-size: 12px;
+                color: aliceblue;
+                position: absolute;
+                right: 20px;
             }
         }
         .line{

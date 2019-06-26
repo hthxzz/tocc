@@ -11,6 +11,9 @@
 
 <script>
 import echarts  from 'echarts';
+// import  '../../untils/color-theme.js';
+import theme from 'echarts/theme/shine';
+// echarts.registerTheme('theme', theme);
     export default {
         name: '',
         data() {
@@ -20,7 +23,7 @@ import echarts  from 'echarts';
             
         },
         mounted () {
-            var myChart1 = echarts.init(document.querySelector(".gauge1"));
+            var myChart1 = echarts.init(document.querySelector(".gauge1"),'shine');
             var myChart2 = echarts.init(document.querySelector(".gauge2"));
             var myChart3 = echarts.init(document.querySelector(".gauge3"));
             var myChart4 = echarts.init(document.querySelector(".gauge4"));
@@ -55,10 +58,10 @@ import echarts  from 'echarts';
                                 shadowBlur: 10
                             }
                         },
-                        pointer:{
-                            // show:false,
-                            width:6
-                        },
+                        // pointer:{
+                        //     // show:false,
+                        //     width:6
+                        // },
                         axisLabel: {            // 坐标轴小标记
                             // textStyle: {       // 属性lineStyle控制线条样式
                             //     fontWeight: 'bolder',
