@@ -7317,6 +7317,11 @@ reselect@^3.0.1:
   resolved "https://registry.npm.taobao.org/reselect/download/reselect-3.0.1.tgz#efdaa98ea7451324d092b2b2163a6a1d7a9a2147"
   integrity sha1-79qpjqdFEyTQkrKyFjpqHXqaIUc=
 
+resize-detector@^0.1.10:
+  version "0.1.10"
+  resolved "https://registry.npm.taobao.org/resize-detector/download/resize-detector-0.1.10.tgz#1da3f961aa5f914ccbcfd3752d52fd45beeb692c"
+  integrity sha1-HaP5YapfkUzLz9N1LVL9Rb7raSw=
+
 resize-observer-polyfill@^1.5.0:
   version "1.5.1"
   resolved "https://registry.npm.taobao.org/resize-observer-polyfill/download/resize-observer-polyfill-1.5.1.tgz#0e9020dd3d21024458d4ebd27e23e40269810464"
@@ -8629,6 +8634,14 @@ vue-cli-plugin-pxtorem@^1.1.0:
   version "1.1.0"
   resolved "https://registry.npm.taobao.org/vue-cli-plugin-pxtorem/download/vue-cli-plugin-pxtorem-1.1.0.tgz#03a22c6266754e73b535f948c6ae0f987a721802"
   integrity sha1-A6IsYmZ1TnO1NflIxq4PmHpyGAI=
+
+vue-echarts@^4.0.3:
+  version "4.0.3"
+  resolved "https://registry.npm.taobao.org/vue-echarts/download/vue-echarts-4.0.3.tgz#4eee27ebadd327bb59e61a95ea35d716da8fa80d"
+  integrity sha1-Tu4n663TJ7tZ5hqV6jXXFtqPqA0=
+  dependencies:
+    lodash "^4.17.11"
+    resize-detector "^0.1.10"
 
 vue-eslint-parser@^2.0.3:
   version "2.0.3"

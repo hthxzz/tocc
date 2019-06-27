@@ -85,16 +85,16 @@
 </template>
 
 <script>
-import panelTitle from "../components/index/panelTitle.vue";
-import jmcxfs from "../components/index/jmcxfs.vue";
-import mapWrap from "../components/index/mapWrap.vue";
-import gauge from "../components/index/gauge.vue";
-import KeyTransportVehicle from "../components/index/KeyTransportVehicle.vue";
-import ydld from "../components/index/ydld.vue";
-import serchPanel from "../components/common/serchPanel.vue";
-import trafficFlow from "../components/index/trafficFlow.vue";
-import EarlyWarning from "../components/index/EarlyWarning.vue";
-import outOf from "../components/index/outOf.vue";
+import panelTitle from "@/components/index/panelTitle.vue";
+import jmcxfs from "@/components/index/jmcxfs.vue";
+import mapWrap from "@/components/index/mapWrap.vue";
+import gauge from "@/components/index/gauge.vue";
+import KeyTransportVehicle from "@/components/index/KeyTransportVehicle.vue";
+import ydld from "@/components/index/ydld.vue";
+import serchPanel from "@/components/common/serchPanel.vue";
+import trafficFlow from "@/components/index/trafficFlow.vue";
+import EarlyWarning from "@/components/index/EarlyWarning.vue";
+import outOf from "@/components/index/outOf.vue";
 
 import echarts  from 'echarts';
     export default {
@@ -179,7 +179,7 @@ import echarts  from 'echarts';
                 flex-direction: column;
                 background:rgba(5,12,38,0.4) no-repeat;
                 background-position: bottom center;
-                background-image: url('../assets/index/index/echart_bg.png') ;
+                background-image: url('../../assets/index/index/echart_bg.png') ;
                 border:1px solid rgba(32,86,221,1);
                 // opacity:0.4;
                  .panel-title{

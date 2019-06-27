@@ -226,7 +226,7 @@ import subMenu from "./components/index/subMenu.vue";
         // background: url('./assets/logo.png') no-repeat;
         background-size: 100% 100%;
         width: 100%;
-        height: 100%;
+        height: 87px;
         display: flex;
         img{
           width: 100%;

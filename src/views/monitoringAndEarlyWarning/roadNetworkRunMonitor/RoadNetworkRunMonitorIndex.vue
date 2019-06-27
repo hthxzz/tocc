@@ -3,7 +3,10 @@
             <div class="left panel">
                 <panel>
                     <PanelItem title="车流量统计">
-                        <div class="content">路网运行监测</div>
+                        <div class="testechar">
+                            <v-chart :options="polar"/>
+                        </div>
+                        
                     </PanelItem>
                     <PanelItem title="车流量占比">
                         <div class="content">路网运行监测</div>
@@ -36,8 +39,56 @@
     export default {
         name: '',
         data() {
+            let data = []
+            for (let i = 0; i <= 360; i++) {
+                let t = i / 180 * Math.PI
+                let r = Math.sin(2 * t) * Math.cos(2 * t)
+                data.push([r, i])
+            }
             return {
                 
+
+
+
+      polar: {
+        title: {
+        //   text: '极坐标双数值轴'
+        },
+        // legend: {
+        // //   data: ['line']
+        // },
+        polar: {
+          center: ['50%', '50%']
+        },
+        tooltip: {
+          trigger: 'axis',
+          axisPointer: {
+            type: 'cross'
+          }
+        },
+        angleAxis: {
+          type: 'value',
+          startAngle: 0
+        },
+        radiusAxis: {
+          min: 0
+        },
+        series: [
+          {
+            coordinateSystem: 'polar',
+            name: 'line',
+            type: 'line',
+            showSymbol: false,
+            data: data
+          }
+        ],
+        animationDuration: 2000
+      }
+
+
+
+
+
             }
         }
     }
@@ -71,5 +122,14 @@
         .right{
             flex: 410;
         } 
+    }
+    // .testechar{
+    //     width: 100%;
+    //     height: 100%;
+    // }
+    .echarts{
+        min-height: 161px;
+        width: 100%;
+        height: 100%;
     }
 </style>

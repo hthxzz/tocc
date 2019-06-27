@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
-import index from './views/index.vue'
 
 Vue.use(Router)
 
@@ -15,7 +14,7 @@ export default new Router({
     {
       path: '/index',
       name: 'index',
-      component: index
+      component: () => import( /* webpackChunkName: "about" */ './views/index/index.vue')
     },    
     {
       path: '/jcyj',
@@ -65,29 +64,14 @@ export default new Router({
       // which is lazy-loaded when the route is visited.
       component: () => import( /* webpackChunkName: "about" */ './views/About.vue')
     },
-    {
-      path: '/jmcxjc',
-      name: 'jmcxjc',
-      component: () => import( /* webpackChunkName: "about" */ './views/jcyj/jmcxjc.vue')
-    },
-    {
-      path: '/lwyxjc',
-      name: 'lwyxjc',
-      component: () => import( /* webpackChunkName: "about" */ './views/jcyj/lwyxjc.vue')
-    },
-    {
-      path: '/zdyscl',
-      name: 'zdyscl',
-      component: () => import( /* webpackChunkName: "about" */ './views/jcyj/zdyscl.vue')
-    },
      {
        path: '/dmjtyxjc',
        name: 'dmjtyxjc',
        children:[{
            path: '',
-           component: () => import( /* webpackChunkName: "about" */ './views/jcyj/DmjtyxjcIndex.vue')
+           component: () => import( /* webpackChunkName: "about" */ './views/monitoringAndEarlyWarning/DmjtyxjcIndex.vue')
        }],
-       component: () => import( /* webpackChunkName: "about" */ './views/jcyj/dmjtyxjc.vue')
+       component: () => import( /* webpackChunkName: "about" */ './views/monitoringAndEarlyWarning/dmjtyxjc.vue')
     },
      { 
       //  道路运行监测
@@ -95,9 +79,9 @@ export default new Router({
        name: 'roadnetworkrunmonitor',
        children: [{
          path: '',
-         component: () => import( /* webpackChunkName: "about" */ './views/jcyj/roadNetworkRunMonitor/RoadNetworkRunMonitorIndex.vue')
+         component: () => import( /* webpackChunkName: "about" */ './views/monitoringAndEarlyWarning/roadNetworkRunMonitor/RoadNetworkRunMonitorIndex.vue')
        }],
-       component: () => import( /* webpackChunkName: "about" */ './views/jcyj/roadNetworkRunMonitor/RoadNetworkRunMonitorContainer.vue')
+       component: () => import( /* webpackChunkName: "about" */ './views/monitoringAndEarlyWarning/roadNetworkRunMonitor/RoadNetworkRunMonitorContainer.vue')
      }
 
   ]

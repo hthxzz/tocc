@@ -4,6 +4,7 @@ import App from './App.vue'
 import store from './store'
 import router from './router'
 import ElementUI from 'element-ui';
+import ECharts from 'vue-echarts';
 import './untils/rem.js';
 import './untils/element-variables.scss';
 import './style/reset.css';
@@ -18,6 +19,7 @@ Vue.config.productionTip = false
 Vue.component('VerticesBorderStyle', VerticesBorderStyle);
 Vue.component('panel', panel);
 Vue.component('PanelItem', PanelItem);
+Vue.component('v-chart', ECharts);
 
 Vue.use(ElementUI);
 new Vue({
