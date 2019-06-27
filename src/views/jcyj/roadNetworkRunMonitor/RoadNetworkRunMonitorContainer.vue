@@ -1,9 +1,9 @@
 <template>
-    <div class="dmjtyxjc-container">
-        <div class="dmjtyxjc-left-float-menu">
+    <div class="road-network-run-monitor-container">
+        <div class="road-network-left-float-menu">
             a
         </div>
-        <div class="dmjtyxjc-content">
+        <div class="road-network-content">
             <router-view></router-view>
         </div>
     </div>
@@ -21,15 +21,15 @@
 </script>
 
 <style lang="scss" scoped>
-    .dmjtyxjc-container{
+    .road-network-run-monitor-container{
         display: flex;
         height: 100%;
         width: 100%;
-        .dmjtyxjc-left-float-menu{
+        .road-network-left-float-menu{
             flex: 59;
             min-width: 59px;
         }
-        .dmjtyxjc-content{
+        .road-network-content{
             flex: 1861;
         }
     }

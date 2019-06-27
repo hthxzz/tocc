@@ -2,6 +2,7 @@
     <div class="container">
         <div class="left-panel panel">
             <div class="first item">
+                <VerticesBorderStyle />
                 <span></span>
                 <div class="panel-title">
                     <panelTitle title="人口迁移人数统计"></panelTitle>
@@ -174,6 +175,7 @@ import echarts  from 'echarts';
                 // height:342px;
                 display: flex;
                 flex: 1;
+                position: relative;
                 flex-direction: column;
                 background:rgba(5,12,38,0.4) no-repeat;
                 background-position: bottom center;

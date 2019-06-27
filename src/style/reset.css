@@ -1,0 +1,7 @@
+a{
+    text-decoration-line: none;
+}
+
+.panel-wrap > .panel-item-container:last-child{
+    margin-bottom: 0
+}

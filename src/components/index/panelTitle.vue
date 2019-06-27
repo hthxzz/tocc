@@ -1,5 +1,5 @@
 <template>
-    <div class="panel-title-container">
+    <div class="panel-title-container" v-if="show">
         <div class="wrap">
             <span class="pro"></span>
             <h2>{{title}}</h2>
@@ -17,10 +17,20 @@
 <script>
     export default {
         name: '',
-        props: ["title",""],
+        props: {
+            title: {
+                type: String,
+                default: ''
+            },
+            show: {
+                type: Boolean,
+                default: true
+            }
+        },
         data() {
             return {
-                rotate:''
+                rotate:'',
+                show: true
             }
         },
         methods:{

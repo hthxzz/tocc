@@ -25,7 +25,7 @@
             let containerElement = this.$refs.container;
             let containerElementStyle = containerElement.getBoundingClientRect();
             
-            containerElement.style.height = this.app - this.nav +"px";
+            containerElement.style.height = this.app - this.nav - 20 +"px";
             containerElement.style.width = containerElementStyle.width - 17 +'px';
             this.$refs.wrap.style.width = containerElementStyle.width +'px';
             this.$refs.wrap.style.maxWidth = containerElementStyle.width +'px';

@@ -6,8 +6,18 @@ import router from './router'
 import ElementUI from 'element-ui';
 import './untils/rem.js';
 import './untils/element-variables.scss';
+import './style/reset.css';
+import './untils/color-theme.js';
+// 全局组件注册
+import VerticesBorderStyle from "./components/common/verticesBorderStyle.vue";
+import panel from "./components/common/panel.vue";
+import PanelItem from "./components/common/PanelItem.vue";
+
 // import './plugins/flexible.js'
 Vue.config.productionTip = false
+Vue.component('VerticesBorderStyle', VerticesBorderStyle);
+Vue.component('panel', panel);
+Vue.component('PanelItem', PanelItem);
 
 Vue.use(ElementUI);
 new Vue({

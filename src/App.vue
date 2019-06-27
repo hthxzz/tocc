@@ -282,6 +282,7 @@ import subMenu from "./components/index/subMenu.vue";
 }
 #nav{
   flex: 110;
+  /* min-height: 85px; */
 }
 .left-actived{
   background: url('./assets/left_nav_h.png')  no-repeat !important;

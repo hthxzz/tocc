@@ -18,7 +18,7 @@
             return {
                 menuList:[
                     {"id":"1s4hgsdhzdsgz","title":"居民出行监测","bg-pic":"../../image/index/menu/list_bg.png","icon":require("../../assets/index/menu/jmcx.png"),"route":"jmcxjc"},
-                    {"id":"ageaadaf","title":"路网运行监测","bg-pic":"../../image/index/menu/list_bg.png","icon":require("../../assets/index/menu/lwyx.png"),"route":"lwyxjc"},
+                    {"id":"ageaadaf","title":"路网运行监测","bg-pic":"../../image/index/menu/list_bg.png","icon":require("../../assets/index/menu/lwyx.png"),"route":"roadnetworkrunmonitor"},
                     {"id":"asfwaqgeaf","title":"地面公共交通运行监测","bg-pic":"../../image/index/menu/list_bg.png","icon":require("../../assets/index/menu/dmgj.png"),"route":"dmjtyxjc"},
                     {"id":"awfwazfaw","title":"重点运输车辆监测","bg-pic":"../../image/index/menu/list_bg.png","icon":require("../../assets/index/menu/zdyscl.png"),"route":"zdyscl"}
                 ],

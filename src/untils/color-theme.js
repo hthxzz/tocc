@@ -167,6 +167,12 @@
                     "borderWidth": "0",
                     "borderColor": "#ccc"
                 }
+           
+            },
+            pointer: {
+                length: '90%',
+                width: 6,
+                color: 'auto'
             }
         },
         "candlestick": {

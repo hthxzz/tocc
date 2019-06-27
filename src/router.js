@@ -83,8 +83,22 @@ export default new Router({
      {
        path: '/dmjtyxjc',
        name: 'dmjtyxjc',
+       children:[{
+           path: '',
+           component: () => import( /* webpackChunkName: "about" */ './views/jcyj/DmjtyxjcIndex.vue')
+       }],
        component: () => import( /* webpackChunkName: "about" */ './views/jcyj/dmjtyxjc.vue')
-    }   
+    },
+     { 
+      //  道路运行监测
+       path: '/roadnetworkrunmonitor', 
+       name: 'roadnetworkrunmonitor',
+       children: [{
+         path: '',
+         component: () => import( /* webpackChunkName: "about" */ './views/jcyj/roadNetworkRunMonitor/RoadNetworkRunMonitorIndex.vue')
+       }],
+       component: () => import( /* webpackChunkName: "about" */ './views/jcyj/roadNetworkRunMonitor/RoadNetworkRunMonitorContainer.vue')
+     }
 
   ]
 })

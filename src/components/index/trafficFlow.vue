@@ -6,7 +6,7 @@
 
 <script>
 import echarts  from 'echarts';
-import  '../../untils/color-theme.js';
+// import  '../../untils/color-theme.js';
 // import 'echarts/theme/shine';
     export default {
         name: '',
