@@ -1,4 +1,4 @@
-export const data = 
+export const cddata = 
         {
     "type": "FeatureCollection",
     "features": [{

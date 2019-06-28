@@ -16,7 +16,7 @@ import echarts  from 'echarts';
             }
         },
         mounted () {
-            var myChart = echarts.init(document.querySelector(".trafficFlow"),'color-theme');
+            var myChart = echarts.init(document.querySelector(".trafficFlow"));
             var option = {
 
                 xAxis: {
@@ -25,7 +25,7 @@ import echarts  from 'echarts';
                     nameGap :'1',
                     axisLabel:{
                         color:'#fff',
-                        fontSize:'16%'
+                        fontSize:'12'
                     },
                     splitLine:{
                         show:false

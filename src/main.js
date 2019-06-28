@@ -7,6 +7,7 @@ import ElementUI from 'element-ui';
 import ECharts from 'vue-echarts';
 import './untils/rem.js';
 import './untils/element-variables.scss';
+import './style/common.scss';
 import './style/reset.css';
 import './untils/color-theme.js';
 // 全局组件注册

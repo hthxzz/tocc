@@ -54,6 +54,9 @@
                     <gauge></gauge>
                 </div>   
             </div>
+            <div class="float-map-menu">
+                <MapFloatMenu></MapFloatMenu>
+            </div>
         </div>
         <div class="right-panel panel">
             <div class="four item">
@@ -95,7 +98,7 @@ import serchPanel from "@/components/common/serchPanel.vue";
 import trafficFlow from "@/components/index/trafficFlow.vue";
 import EarlyWarning from "@/components/index/EarlyWarning.vue";
 import outOf from "@/components/index/outOf.vue";
-
+import MapFloatMenu from "@/components/common/MapFloatMenu.vue";
 import echarts  from 'echarts';
     export default {
         name: '',
@@ -109,7 +112,8 @@ import echarts  from 'echarts';
             serchPanel,
             trafficFlow,
             EarlyWarning,
-            outOf
+            outOf,
+            MapFloatMenu
             
         },
         mounted () {
@@ -268,12 +272,17 @@ import echarts  from 'echarts';
             display: flex;
             flex-direction: column;
             margin: 0 0 0 10px;
+            position: relative;
             .map-wrap{
                 flex: 681;
                 // width:1060px;
                 // height:682px;
                 background:radial-gradient(circle,rgba(32,86,221,.4),rgba(7,22,54,.4));
                 border:1px solid rgba(32,86,221,1);
+            }
+            .float-map-menu{
+                position: absolute;
+                right: 10px;
             }
             .speed{
                 flex: 268;
