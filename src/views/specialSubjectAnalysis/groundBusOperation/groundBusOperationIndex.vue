@@ -3,7 +3,9 @@
         <div class="ground-bus-index-wrap">
             <div class="ground-bus-top">
                 <div class="ground-bus-top-left">
-                    <div class="content first"></div>
+                    <div class="content first">
+                        <button @click="aaaaa">aaaaaaaaaa</button>
+                    </div>
                     <div class="content second"></div>
                 </div>
                 <div class="ground-bus-right">
@@ -12,43 +14,32 @@
                 </div>
             </div>
             <div class="ground-bus-bottom">
-                <div id="map" class="map">
-
-                </div>
+                <amap></amap>
             </div>
         </div>
     </div>
 </template>
 
 <script>
-import Map from 'ol/Map';
-import View from 'ol/View';
-import TileLayer from 'ol/layer/Tile';
-import XYZ from 'ol/source/XYZ';
-
+import amap from "../../../components/map.vue";
 
     export default {
         name: '',
+        components: {
+            amap
+        },
         data() {
             return {
-                
+                center:[0,0]
+            }
+        },
+        methods: {
+            aaaaa(){
+                this.center = [21,21]
             }
         },
         mounted () {
-            new Map({
-                target: 'map',
-                layers: [
-                    new TileLayer({
-                    source: new XYZ({
-                        url: 'https://{a-c}.tile.openstreetmap.org/{z}/{x}/{y}.png'
-                    })
-                    })
-                ],
-                view: new View({
-                    center: [0, 0],
-                    zoom: 2
-                })
-                });
+            
         }
     }
 </script>
