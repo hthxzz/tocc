@@ -16,54 +16,6 @@ export default new Router({
       name: 'index',
       component: () => import( /* webpackChunkName: "about" */ './views/index/index.vue')
     },    
-    {
-      path: '/jcyj',
-      name: 'jcyj',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/jcyj.vue')
-    }, 
-    {
-      path: '/ztjc',
-      name: 'ztjc',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import( /* webpackChunkName: "about" */ './views/ztjc.vue')
-    }, 
-    {
-      path: '/yjxt',
-      name: 'yjxt',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import( /* webpackChunkName: "about" */ './views/yjxt.vue')
-    }, 
-    {
-      path: '/xxfb',
-      name: 'xxfb',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import( /* webpackChunkName: "about" */ './views/xxfb.vue')
-    }, 
-    {
-      path: '/fzjc',
-      name: 'fzjc',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import( /* webpackChunkName: "about" */ './views/fzjc.vue')
-    }, 
-    {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import( /* webpackChunkName: "about" */ './views/About.vue')
-    },
      {
        path: '/dmjtyxjc',
        name: 'dmjtyxjc',
@@ -77,11 +29,43 @@ export default new Router({
       //  道路运行监测
        path: '/roadnetworkrunmonitor', 
        name: 'roadnetworkrunmonitor',
+       component: () => import( /* webpackChunkName: "about" */ './views/monitoringAndEarlyWarning/monitorAndEarlyWarnCntainer.vue'),
        children: [{
-         path: '',
+         path: 'a',
+         name:'a',
          component: () => import( /* webpackChunkName: "about" */ './views/monitoringAndEarlyWarning/roadNetworkRunMonitor/RoadNetworkRunMonitorIndex.vue')
+         
+       },{
+           path: 'KeyTransportVehiclesIndex',//重点运输车辆
+           name:'KeyTransportVehiclesIndex',
+           component: () => import( /* webpackChunkName: "about" */ './views/monitoringAndEarlyWarning/keyTransportVehicles/KeyTransportVehiclesIndex.vue')
+       }, {
+         path: 'slowTrafficMonitorIndex', //慢性交通
+         name: 'slowTrafficMonitorIndex',
+         component: () => import( /* webpackChunkName: "about" */ './views/monitoringAndEarlyWarning/slowTrafficMonitor/slowTrafficMonitorIndex.vue')
+       }
+      ],
+       
+     }, {
+       //  专题分析监测
+       path: '/specialSubjectAnalysis',
+       name: 'specialSubjectAnalysis',
+       component: () => import( /* webpackChunkName: "about" */ './views/specialSubjectAnalysis/specialSubjectAnalysisContainer.vue'),
+       children: [{  //重大活动
+         path: 'majorActivitiesIndex',
+         name: 'majorActivitiesIndex',
+         component: () => import( /* webpackChunkName: "about" */ './views/specialSubjectAnalysis/majorActivities/majorActivitiesIndex.vue')
+
+       }, {
+         path: 'groundBusOperationIndex', //地面公交运行专题分析
+         name: 'groundBusOperationIndex',
+         component: () => import( /* webpackChunkName: "about" */ './views/specialSubjectAnalysis/groundBusOperation/groundBusOperationIndex.vue')
+       }, {
+         path: 'shareBikeServiceIndex', //共享单车服务分析
+         name: 'shareBikeServiceIndex',
+         component: () => import( /* webpackChunkName: "about" */ './views/specialSubjectAnalysis/shareBikeService/shareBikeServiceIndex.vue')
        }],
-       component: () => import( /* webpackChunkName: "about" */ './views/monitoringAndEarlyWarning/roadNetworkRunMonitor/RoadNetworkRunMonitorContainer.vue')
+
      }
 
   ]

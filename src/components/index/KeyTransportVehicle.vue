@@ -96,7 +96,6 @@ var option = {
     series: [{
             name: 'Line 1',
             type: 'pie',
-            clockWise: false,
             radius: ['75%', '85%'],
             center:['50%','50%'],
             itemStyle: dataStyle,
@@ -110,7 +109,7 @@ var option = {
                     value: 54.6,
                     name: '四级匹配度',
                     itemStyle: {
-                        normal: {
+                        normal: {      
                             // color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                             //     offset: 0,
                             //     color:color[0]
@@ -135,7 +134,6 @@ var option = {
         {
             name: 'Line 2',
             type: 'pie',
-            clockWise: false,
             radius: ['60%', '70%'],
             center:['50%','50%'],
             itemStyle: dataStyle,
@@ -164,10 +162,8 @@ var option = {
         {
             name: 'Line 3',
             type: 'pie',
-            clockWise: false,
             radius: ['45%', '55%'],
             center:['50%','50%'],
-            clockWise: true,
             itemStyle: dataStyle,
             hoverAnimation: false,
             startAngle: 90,
@@ -193,12 +189,10 @@ var option = {
              {
             name: 'Line 4',
             type: 'pie',
-            clockWise: false,
             radius: ['30%', '40%'],
             center:['50%','50%'],
             itemStyle: dataStyle,
             hoverAnimation: false,
-            clockWise: true,
             startAngle: 90,
             data: [{
                     value: 30,

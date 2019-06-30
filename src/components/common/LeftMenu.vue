@@ -1,7 +1,7 @@
 <template>
   <div class="left-menu-containe">
     <div class="left-menu-wrap">
-      <div class="item" :key="item.id" v-for="item in leftMenuList">
+      <div class="item" :key="item.id" v-for="item in leftMenuList" @click="goto">
         <img :src="item.picSrc" alt>
         <div class="tip">{{ item.tip }}</div>
       </div>
@@ -32,6 +32,11 @@ export default {
         }
       ]
     };
+  },
+  methods: {
+    goto(){
+      this.$router.push({name:'b'});
+    }
   }
 };
 </script>

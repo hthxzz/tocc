@@ -59,7 +59,7 @@ import subMenu from "./components/index/subMenu.vue";
             }
         },
         mounted () {
-          this.$store.state.currentActiveMenuEle = this.$refs.index;
+          this.$store.state.app.currentActiveMenuEle = this.$refs.index;
           this.elementNav = document.querySelector("#nav").getBoundingClientRect();
           setInterval(() => {
           var date = new Date(),
@@ -75,7 +75,7 @@ import subMenu from "./components/index/subMenu.vue";
         },
         computed: {
           show:function(){
-            return this.$store.state.menushow
+            return this.$store.state.app.menushow
           },
           positin:function(){
             return  [this.elementHover.x + this.elementHover.width/2, this.elementNav.height - 10];
@@ -89,11 +89,12 @@ import subMenu from "./components/index/subMenu.vue";
             let selectEleClass = event.srcElement.classList[0];
             if (this.contentOfLeftMenu(selectEleClass)) {
                 this.elementHover = event.srcElement.getBoundingClientRect();
-                this.$store.state.menushow = true;
+                this.$store.state.app.menushow = true;
+                this.$store.state.app.hoverMenuEle = selectEleClass;
             }
           },
           hideMenu(){
-            this.$store.state.menushow = false;
+            this.$store.state.app.menushow = false;
           },
           contentOfLeftMenu(selectEleClass){
               const   leftmenu = ["jcyj","ztjc"];
@@ -270,7 +271,7 @@ import subMenu from "./components/index/subMenu.vue";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #ffffff;
   height: 100vh;
   width: 100vw;
   overflow: hidden;
