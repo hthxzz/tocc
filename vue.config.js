@@ -17,6 +17,8 @@ module.exports = {
         }
     },
     chainWebpack: config => {
+        console.log(config);
+        
         const oneOfsMap = config.module.rule('scss').oneOfs.store
         oneOfsMap.forEach(item => {
             item
