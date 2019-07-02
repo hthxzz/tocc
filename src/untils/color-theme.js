@@ -21,7 +21,7 @@
 //         return;
 //     }
     import echarts from 'echarts';
-    echarts.registerTheme('color-theme', {
+    echarts.registerTheme('theme', {
         "color": [
             "#2056dd",
             "#ffff00",
