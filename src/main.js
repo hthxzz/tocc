@@ -10,17 +10,18 @@ import './untils/element-variables.scss';
 import './style/common.scss';
 import './style/reset.css';
 import './untils/color-theme.js';
+import './untils/componentRegister.js'
 import store  from './store/index.js'
 // 全局组件注册
-import VerticesBorderStyle from "./components/common/verticesBorderStyle.vue";
-import panel from "./components/common/panel.vue";
-import PanelItem from "./components/common/PanelItem.vue";
+// import VerticesBorderStyle from "./components/common/verticesBorderStyle.vue";
+// import panel from "./components/common/panel.vue";
+// import PanelItem from "./components/common/PanelItem.vue";
 
 // import './plugins/flexible.js'
 Vue.config.productionTip = false
-Vue.component('VerticesBorderStyle', VerticesBorderStyle);
-Vue.component('panel', panel);
-Vue.component('PanelItem', PanelItem);
+// Vue.component('VerticesBorderStyle', VerticesBorderStyle);
+// Vue.component('panel', panel);
+// Vue.component('PanelItem', PanelItem);
 Vue.component('v-chart', ECharts);
 
 Vue.use(ElementUI);

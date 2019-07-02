@@ -54,7 +54,8 @@ import { mapMutations } from 'vuex'
               time: '',
               sysName: '',
               elementNav: '',
-              elementHover: ''
+              elementHover: '',
+              positin:[0,0]
                 // show:this.$store.state.menushow
 
             }
@@ -62,6 +63,8 @@ import { mapMutations } from 'vuex'
         mounted () {
           this.$store.state.app.currentActiveMenuEle = this.$refs.index;
           this.elementNav = document.querySelector("#nav").getBoundingClientRect();
+          console.log(process.env);
+          
           setInterval(() => {
           var date = new Date(),
               year = date.getFullYear(),
@@ -77,9 +80,6 @@ import { mapMutations } from 'vuex'
         computed: {
           show:function(){
             return this.$store.state.app.menushow
-          },
-          positin:function(){
-            return  [this.elementHover.x + this.elementHover.width/2, this.elementNav.height - 10];
           }
         },
         methods: {
@@ -92,6 +92,8 @@ import { mapMutations } from 'vuex'
                 this.elementHover = event.srcElement.getBoundingClientRect();
                 this.$store.state.app.menushow = true;
                 this.$store.state.app.hoverMenuEle = selectEleClass;
+                this.positin[0] = this.elementHover.x + this.elementHover.width/2;
+                this.positin[1] = this.elementNav.height - 10;
             }
             if (this.contentOfRightMenu(selectEleClass)) {
                 this.elementHover = event.srcElement.getBoundingClientRect();
