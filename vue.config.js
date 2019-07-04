@@ -1,5 +1,3 @@
-
-
 module.exports = {
     // 修改的配置
     // 将baseUrl: '/api',改为baseUrl: '/',
@@ -18,7 +16,7 @@ module.exports = {
     },
     chainWebpack: config => {
         console.log(config);
-        
+
         const oneOfsMap = config.module.rule('scss').oneOfs.store
         oneOfsMap.forEach(item => {
             item
@@ -64,4 +62,3 @@ module.exports = {
 //     }
 //   }
 // }
-

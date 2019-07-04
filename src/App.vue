@@ -89,8 +89,14 @@ import subMenu from "./components/index/subMenu.vue";
             let selectEleClass = event.srcElement.classList[0];
             if (this.contentOfLeftMenu(selectEleClass)) {
                 this.elementHover = event.srcElement.getBoundingClientRect();
-                this.$store.state.app.menushow = true;
                 this.$store.state.app.hoverMenuEle = selectEleClass;
+                
+                // this.$nextTick(function(){
+                //   this.$store.state.app.menushow = true;
+                // })
+                setTimeout(() => {
+                  this.$store.state.app.menushow = true;
+                }, 500);
                 this.positin[0] = this.elementHover.x + this.elementHover.width/2;
                 this.positin[1] = this.elementNav.height - 10;
             }
