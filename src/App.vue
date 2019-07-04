@@ -17,7 +17,7 @@
       <div class="logo">
         <img src="./assets/logo.png" alt="" srcset="">
       </div>
-      <div class="menu right" @click="selectSubSys">
+      <div class="menu right" @click="selectSubSys" @mouseover="showMenu" @mouseleave="hideMenu">
         <div class="yjxt" ref="yjxt">应急协同</div>
         <div class="xxfb" ref="xxfb">信息发布</div>
         <div class="fzjc" ref="fzjc">辅助决策</div>
@@ -43,6 +43,7 @@
 </template>
 <script>
 import subMenu from "./components/index/subMenu.vue";
+import { mapMutations } from 'vuex'
     export default {
         name: '',
         components: {
@@ -100,9 +101,14 @@ import subMenu from "./components/index/subMenu.vue";
                 this.positin[0] = this.elementHover.x + this.elementHover.width/2;
                 this.positin[1] = this.elementNav.height - 10;
             }
+            if (this.contentOfRightMenu(selectEleClass)) {
+                this.elementHover = event.srcElement.getBoundingClientRect();
+                this.$store.state.app.menushow = true;
+                this.$store.state.app.hoverMenuEle = selectEleClass;
+            }
           },
           hideMenu(){
-            this.$store.state.app.menushow = false;
+            this.$store.commit('app/switchMenuShow',false)
           },
           contentOfLeftMenu(selectEleClass){
               const   leftmenu = ["jcyj","ztjc"];
@@ -272,7 +278,8 @@ import subMenu from "./components/index/subMenu.vue";
 
 <style>
 *{
-  margin: 0
+  margin: 0;
+  /* transition: .4s; */
 }
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;

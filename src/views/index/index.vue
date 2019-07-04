@@ -15,7 +15,8 @@
                         <h2>TOP5</h2>
                     </div>
                     <div class="char">
-                        <div class="pic-char"></div>
+                        <v-chart :options="polar" :theme="theme" />
+                        <!-- <div class="pic-char"></div> -->
                         <div class="bar">
                             <outOf></outOf>
                         </div>
@@ -117,8 +118,10 @@ import echarts  from 'echarts';
             
         },
         mounted () {
-             var myChart = echarts.init(document.querySelector(".pic-char"));
-             var option = {
+        },
+        data() {
+            return {
+                polar:{
                 // title : {
                 //     text: '南丁格尔玫瑰图',
                 //     subtext: '纯属虚构',
@@ -141,7 +144,7 @@ import echarts  from 'echarts';
                         name:'交通方式',
                         type:'pie',
                         radius : [13, 40],
-                        center : ['50%', '50%'],
+                        // center : ['50%', '50%'],
                         roseType : 'area',
                         data:[
                             {value:10, name:'火车'},
@@ -150,15 +153,7 @@ import echarts  from 'echarts';
                         ]
                     }
                 ]
-            };
-
-
-
-             myChart.setOption(option);
-        },
-        data() {
-            return {
-                
+            }
             }
         }
     }
@@ -312,5 +307,10 @@ import echarts  from 'echarts';
         .right-panel{
             margin-right: 10px;
         }
+    }
+    .echarts{
+        min-height: 161px;
+        width: 200px /* 200/100 */;
+        height: 200px;
     }
 </style>

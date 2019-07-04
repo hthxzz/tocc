@@ -3,7 +3,7 @@
         <span class="tran"  v-bind:style="{top:positin[1] -10 + 'px',left:positin[0] - 16 +'px'}"></span>
         <div class="item" :key="item.id" v-for="(item) in menuList" @click="goto()">
             <router-link :to="{path:item.route}" replace>
-                <img :src="(item.icon)" alt="" width="100px" height="100px">
+                <img :src="(item.icon)" alt="">
                 <h2>{{item.title}}</h2>
             </router-link>
         </div>
@@ -52,7 +52,7 @@
         methods: {
             goto(){
                 // this.$router.push();
-
+                switchMenuShow
                 this.$store.state.app.menushow = false;
             },
             showMenu(){
