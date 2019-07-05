@@ -57,7 +57,7 @@
         }),
         style: function(feature) {
           style.getText().setText(feature.get('name'));
-          return style;
+          return style; 
         }
       });
 
@@ -70,6 +70,10 @@
           projection:"EPSG:4326"
         })
       });
+      map.on('click',((e)=>{
+        console.log(e);
+        
+      }))
        this.$root.maps = map;
       var highlightStyle = new Style({
         stroke: new Stroke({

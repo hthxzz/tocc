@@ -40,7 +40,7 @@
     .panel-container{
         width:100%;
         height:100%;
-        max-width: 410px;
+        // max-width: 410px;
         overflow: hidden;
         .panel-wrap{
             height: 100%;
