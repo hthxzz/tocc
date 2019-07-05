@@ -53,6 +53,9 @@ export default {
         margin-bottom: 21px;
         position: relative;
         cursor: pointer;
+        &:hover{
+          background:rgba(32,86,221,.4);
+        }
         &:hover > .tip{
             display: block;
         }
@@ -62,7 +65,7 @@ export default {
         color: #FFFFFF;
         left: 60px;
         // width: 81px;
-        top: 8px;
+        top: 11px;
         display: none;
         text-align: center;
         width:80px;

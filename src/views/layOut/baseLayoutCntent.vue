@@ -33,7 +33,7 @@
         }
         .left-panel{
             flex: 410;
-            border: $base-border;
+            // border: $base-border;
         }
         .mid-content{
             flex: 1011;

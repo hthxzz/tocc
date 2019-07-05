@@ -34,6 +34,7 @@ import LeftMenu from "@/components/common/LeftMenu.vue";
             min-width: 59px;
             z-index: 666;
             position: relative;
+            margin-top: 10px;
         }
         .monitor-earlywarn-content{
             flex: 1861;

@@ -17,6 +17,10 @@
                 </panel>          
             </div>
             <div class="mid">
+                <div class="float-map-menu">
+                    <MapFloatMenu></MapFloatMenu>
+                </div>
+                <amap />
                 <VerticesBorderStyle/>
             </div>
             <div class="right panel">
@@ -36,8 +40,12 @@
 </template>
 
 <script>
+import amap from "../../../components/map.vue";
     export default {
         name: '',
+        components: {
+            amap
+        },
         data() {
             let data = []
             for (let i = 0; i <= 360; i++) {
@@ -114,6 +122,12 @@
             margin: 10px 10px 0  0;
             position: relative;
             border: 1px solid rgba(32, 86, 221, 0.4);
+            .float-map-menu{
+                z-index: 99999;
+                position: absolute;
+                right: 10px;
+                top: 10px;
+            }
         }  
         .content{
             height: 256px;

@@ -57,7 +57,7 @@
             // width: 4.1rem;
             // height: .47rem;
             display: flex;
-            max-width: 4.1rem;
+            // max-width: 4.1rem;
             margin-top:23px;
             margin-bottom:8px;
             position: relative;
