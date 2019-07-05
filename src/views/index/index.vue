@@ -15,7 +15,7 @@
                         <h2>TOP5</h2>
                     </div>
                     <div class="char">
-                        <v-chart :options="polar" :theme="theme" />
+                        <v-chart :options="polar" theme="theme" />
                         <!-- <div class="pic-char"></div> -->
                         <div class="bar">
                             <outOf></outOf>
@@ -121,12 +121,9 @@ import echarts  from 'echarts';
         },
         data() {
             return {
+                backgroundColor: "#fff",
                 polar:{
-                // title : {
-                //     text: '南丁格尔玫瑰图',
-                //     subtext: '纯属虚构',
-                //     x:'center'
-                // },
+              
                 tooltip : {
                     trigger: 'item',
                     position: ['50%', '50%'],

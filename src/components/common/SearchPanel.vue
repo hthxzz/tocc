@@ -13,6 +13,11 @@
                     <el-input  v-if="item.type == 'input'"    v-model="searchData.input" :placeholder="item.placeholder || '请输入内容'"></el-input>
                     <el-radio v-if="item.type == 'radio'" v-model="radio" label="1">备选项</el-radio>
                     <el-radio v-if="item.type == 'radio'" v-model="radio" label="2">备选项</el-radio>
+                    <el-date-picker v-if="item.type == 'date'"
+                        v-model="searchData.date"
+                        type="date"
+                        placeholder="选择日期">
+                    </el-date-picker>
             </div>
          </div>
         
@@ -28,6 +33,7 @@
         watch: {
             searchData:{
                 handler(newData, oldData){
+                console.log(newData);
                 this.$emit("search",newData);
             },
             deep:true
@@ -38,6 +44,7 @@
             return {
                 searchData:{
                     input:'',
+                    date:''
                 },
                 itemConfigList:[{
                     type:'input',placeholder:'输入......'
@@ -45,9 +52,11 @@
                     type:'select'
                 },{
                     type:'radio'
+                },{
+                    type:'date'
                 }
                 ],
-                
+                value1:'',
                 radio: '1',
                  options: [{
                     value: '选项1',
@@ -78,7 +87,7 @@
         .wrap{
             display: flex;
             .item{
-
+                align-self: center;
             }
         }
     }

@@ -14,6 +14,10 @@ module.exports = {
             }
         }
     },
+     transpileDependencies: [
+         'vue-echarts',
+         'resize-detector'
+     ],
     chainWebpack: config => {
         console.log(config);
 
