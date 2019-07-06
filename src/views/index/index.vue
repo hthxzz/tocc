@@ -2,7 +2,7 @@
     <div class="container">
         <div class="left-panel panel">
             <div class="first item">
-                <VerticesBorderStyle />
+                <!-- <VerticesBorderStyle/> -->
                 <span></span>
                 <div class="panel-title">
                     <panelTitle title="人口迁移人数统计"></panelTitle>
@@ -15,7 +15,7 @@
                         <h2>TOP5</h2>
                     </div>
                     <div class="char">
-                        <v-chart :options="polar" :theme="theme" />
+                        <v-chart :options="polar" theme="theme" />
                         <!-- <div class="pic-char"></div> -->
                         <div class="bar">
                             <outOf></outOf>
@@ -29,7 +29,7 @@
                 </div>
                 <div class="panel-content">
                     <jmcxfs></jmcxfs>
-                </div>              
+                </div>   
             </div>
             <div class="three item">
                 <div class="panel-title">
@@ -121,12 +121,9 @@ import echarts  from 'echarts';
         },
         data() {
             return {
+                backgroundColor: "#fff",
                 polar:{
-                // title : {
-                //     text: '南丁格尔玫瑰图',
-                //     subtext: '纯属虚构',
-                //     x:'center'
-                // },
+              
                 tooltip : {
                     trigger: 'item',
                     position: ['50%', '50%'],
@@ -278,6 +275,7 @@ import echarts  from 'echarts';
             .float-map-menu{
                 position: absolute;
                 right: 10px;
+                top: 10px;
             }
             .speed{
                 flex: 268;
@@ -309,8 +307,8 @@ import echarts  from 'echarts';
         }
     }
     .echarts{
-        min-height: 161px;
-        width: 200px /* 200/100 */;
-        height: 200px;
+        // min-height: 161px;
+        width: 100px /* 200/100 */;
+        height: 100px;
     }
 </style>

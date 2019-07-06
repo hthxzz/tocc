@@ -16,6 +16,7 @@
       </div>
       <div class="logo">
         <img src="./assets/logo.png" alt="" srcset="">
+        <h2>{{ currentActiveMenuTitle }}</h2>
       </div>
       <div class="menu right" @click="selectSubSys" @mouseover="showMenu" @mouseleave="hideMenu">
         <div class="yjxt" ref="yjxt">应急协同</div>
@@ -62,6 +63,7 @@ import { mapMutations } from 'vuex'
         },
         mounted () {
           this.$store.state.app.currentActiveMenuEle = this.$refs.index;
+          this.$store.state.app.preActiveMenuEle = this.$refs.index;
           this.elementNav = document.querySelector("#nav").getBoundingClientRect();
           console.log(process.env);
           
@@ -80,6 +82,10 @@ import { mapMutations } from 'vuex'
         computed: {
           show:function(){
             return this.$store.state.app.menushow
+          },
+          //当前激活菜单标题
+          currentActiveMenuTitle:function(){
+            return this.$store.state.app.currentActiveMenuTitle
           }
         },
         methods: {
@@ -100,6 +106,8 @@ import { mapMutations } from 'vuex'
                 }, 500);
                 this.positin[0] = this.elementHover.x + this.elementHover.width/2;
                 this.positin[1] = this.elementNav.height - 10;
+
+                this.$store.state.app.currentActiveMenuEle = event.srcElement;
             }
             if (this.contentOfRightMenu(selectEleClass)) {
                 this.elementHover = event.srcElement.getBoundingClientRect();
@@ -243,9 +251,17 @@ import { mapMutations } from 'vuex'
         width: 100%;
         height: 87px;
         display: flex;
+        position: relative;
         img{
           width: 100%;
           height: 100%;
+        }
+        h2{
+          position: absolute;
+          font-size: 12px;
+          bottom: 1px;
+          width: 100%;
+
         }
       }
       .user{

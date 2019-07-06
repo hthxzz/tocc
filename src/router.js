@@ -75,6 +75,10 @@ export default new Router({
         path: 'shareBikeServiceIndex', //共享单车服务分析
         name: 'shareBikeServiceIndex',
         component: () => import('./views/specialSubjectAnalysis/shareBikeService/shareBikeServiceIndex.vue')
+      }, {
+        path: 'badWeather', //恶劣天气交通运行专题监测
+        name: 'badWeather',
+        component: () => import('./views/specialSubjectAnalysis/badWeather/badWeather.vue')
       }],
 
     }, {

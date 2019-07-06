@@ -1,7 +1,7 @@
 <template>
     <div class="wrapper"  v-bind:style="{top:positin[1] + 'px',left:positin[0] - elementHeight/2 < 10 ? 10 : positin[0] - elementHeight/2 +'px',visibility:visibility}" @mouseover="showMenu" @mouseleave="hideMenu">
         <span class="tran"  v-bind:style="{top:positin[1] -10 + 'px',left:positin[0] - 16 +'px'}"></span>
-        <div class="item" :key="item.id" v-for="(item) in menuList" @click="goto()">
+        <div class="item" :key="item.id" v-for="(item) in menuList" @click="goto($event)">
             <router-link :to="{path:item.route}" replace>
                 <img :src="(item.icon)" alt="">
                 <h2>{{item.title}}</h2>
@@ -50,10 +50,31 @@
           this.elementHeight = wrapper.getBoundingClientRect().width;  
         },
         methods: {
-            goto(){
+            goto(event){
                 // this.$router.push();
-                switchMenuShow
-                this.$store.state.app.menushow = false;
+                // switchMenuShow
+                console.log('tttttttttt');
+                event.currentTarget.querySelector('h2').innerHTML;
+                let currentActiveMenuEle = this.$store.state.app.currentActiveMenuEle;
+                let preActiveMenuEle = this.$store.state.app.preActiveMenuEle;
+                if (this.contentOfLeftMenu(currentActiveMenuEle.classList[0])) {
+                    this.$store.state.app.currentActiveMenuEle.classList.add("left-actived");
+                    preActiveMenuEle.classList.remove("left-actived");
+                }else{
+                    this.$store.state.app.currentActiveMenuEle.classList.add("right-actived");
+                    preActiveMenuEle.classList.remove("right-actived");
+                }
+                
+                this.$store.state.app.preActiveMenuEle = currentActiveMenuEle
+                this.$store.state.app.currentActiveMenuTitle =  event.currentTarget.querySelector('h2').innerHTML;
+            },
+            contentOfLeftMenu(selectEleClass){
+              const   leftmenu = ["jcyj","ztjc"];
+              return  leftmenu.indexOf(selectEleClass) != -1 ? true:false;
+            },
+            contentOfRightMenu(selectEleClass){
+                const   rightmenu = ["yjxt","xxfb","fzjc"];
+                return  rightmenu.indexOf(selectEleClass) != -1 ? true:false;
             },
             showMenu(){
                 this.$store.state.app.menushow = true;
@@ -67,7 +88,7 @@
     }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
     .wrapper{
         position: absolute;
         // top: 90px;

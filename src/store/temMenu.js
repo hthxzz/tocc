@@ -121,7 +121,13 @@ export default {
             "title": "重大活动专题监测",
             "icon": require("../assets/index/menu/fszlcl.png"),
             "route": "/specialSubjectAnalysis/majorActivitiesIndex"
+        }, {
+            "id": "21",
+            "title": "恶劣天气交通运行专题监测",
+            "icon": require("../assets/index/menu/fszlcl.png"),
+            "route": "/specialSubjectAnalysis/badWeather"
         }
+        
     ],
     //应急协同
     yjxt: [{

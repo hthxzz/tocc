@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <div class="map" id="map"></div>
+        <div class="map" id="map" ref="map"></div>
         <!-- <div id="info">&nbsp;</div> -->
         <popup></popup>
     </div>
@@ -25,10 +25,15 @@
           popup
         },
         mounted () {
-         
+          console.log('aaaaaaaaaaaaaaa');
+          
+          let mapdom = document.querySelector("#map");
+          mapdom.style.width = mapdom.getBoundingClientRect().width + 'px';
+          mapdom.style.height = mapdom.getBoundingClientRect().height + 'px';
+
               var style = new Style({
                 fill: new Fill({
-          color: 'rgba(53, 210, 255, 0.1)'
+          color: 'rgba(16, 40, 99, 1.6)'
         }),
         stroke: new Stroke({
           color: '#319FD3',
@@ -37,12 +42,12 @@
         text: new Text({
           font: '12px Microsoft YaHei,sans-serif',
           fill: new Fill({
-            color: 'rgb( 166, 255, 244 )'
+            color: '#fff'
           }),
-          stroke: new Stroke({
-            color: 'rgb( 166, 255, 244 )',
-            width: 1
-          })
+          // stroke: new Stroke({
+          //   color: 'rgb( 166, 255, 244 )',
+          //   width: 1
+          // })
         })
       });
       var vectorLayer = new VectorLayer({
@@ -61,7 +66,7 @@
         target: 'map',
         view: new View({
           center: [103.992992,30.529185],
-          zoom: 7,
+          zoom: 9,
           projection:"EPSG:4326"
         })
       });

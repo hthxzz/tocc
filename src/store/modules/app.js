@@ -6,11 +6,15 @@ const   state = {
         preActiveMenuEle: '',
         hoverMenuEle: 'index',
         currentActiveMenuEle: '',
-        menuList: temMenu
+        menuList: temMenu,
+        currentActiveMenuTitle : '系统首页'
     };
 const   mutations ={
         switchMenuShow(state, status){
             state.menushow = status;
+        },
+        setCurrentActiveMenuTitle(state, title) {
+            state.currentActiveMenuTitle = title;
         }
     };
  const  actions = {
