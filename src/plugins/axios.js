@@ -15,6 +15,9 @@ let config = {
 };
 
 const _axios = axios.create(config);
+console.log('aaaaaaa12345678901');
+
+console.log(this);
 
 _axios.interceptors.request.use(
   function(config) {

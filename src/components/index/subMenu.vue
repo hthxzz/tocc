@@ -20,7 +20,9 @@
             }
         },
         created () {
-          this.$axios.get("getmenu").then(function (params) {
+            console.log('menugeta');
+            
+          this.$get("getmenu",{status:123456}).then(function (params) {
               console.log(params);
               
           });

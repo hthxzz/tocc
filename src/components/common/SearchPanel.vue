@@ -2,7 +2,7 @@
     <div class="search-panel-container">
         <div class="wrap">
             <div class="item" v-for="item in itemConfigList">
-                    <el-select v-if="item.type == 'select' " v-model="value" placeholder="请选择">
+                    <el-select v-if="item.type == 'select' " v-model="searchData.select" placeholder="请选择">
                         <el-option
                         v-for="item in options"
                         :key="item.value"
@@ -44,7 +44,7 @@
             return {
                 searchData:{
                     input:'',
-                    date:''
+                    select:''
                 },
                 itemConfigList:[{
                     type:'input',placeholder:'输入......'
