@@ -10,6 +10,7 @@
             :value="item.value"
           ></el-option>
         </el-select>
+        
         <el-input
           v-if="item.type == 'input'"
           v-model="searchData[item.VModelvalue.name]"
