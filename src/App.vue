@@ -114,6 +114,8 @@ import { mapMutations } from 'vuex'
                 this.$store.state.app.menushow = true;
                 this.$store.state.app.hoverMenuEle = selectEleClass;
             }
+            let size = document.querySelector(".wrapper").getBoundingClientRect();
+            this.$store.commit('app/setMenuWrapperSize',size);
           },
           hideMenu(){
             this.$store.commit('app/switchMenuShow',false)
