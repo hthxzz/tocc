@@ -13,7 +13,7 @@
                     <el-input  v-if="item.type == 'input'"    v-model="searchData.input" :placeholder="item.placeholder || '请输入内容'"></el-input>
                     <el-radio v-if="item.type == 'radio'" v-model="radio" label="1">备选项</el-radio>
                     <el-radio v-if="item.type == 'radio'" v-model="radio" label="2">备选项</el-radio>
-                    <el-date-picker v-if="item.type == 'date'"
+                    <el-date-picker style="width:100px;height:20px" v-if="item.type == 'date'"
                         v-model="searchData.date"
                         type="date"
                         placeholder="选择日期">
