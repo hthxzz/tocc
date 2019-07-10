@@ -36,12 +36,12 @@ export default {
   props: {
       searchConfig:{
 
+
       }
   },
   watch: {
     searchData: {
       handler(newData, oldData) {
-        console.log(newData);
         this.$emit("search", newData);
       },
       deep: true
