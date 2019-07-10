@@ -5,6 +5,10 @@
                 <VerticesBorderStyle />
             </div>
             <div class="right panel">
+                <div class="float-map-menu">
+                    <MapFloatMenu></MapFloatMenu>
+                </div>
+                <Amap />
                 <VerticesBorderStyle />
             </div>
         </div>

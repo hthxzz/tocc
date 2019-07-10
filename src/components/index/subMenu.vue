@@ -21,10 +21,15 @@
         },
         created () {
             console.log('menugeta');
-            
-          this.$get("getmenu",{status:123456}).then(function (params) {
-              console.log(params);
+        let that = this;
+          this.$http.$get("getMenu",{status:123456}).then((params)=>{
+              console.log("aaaaaaaaaaaaaaaa");
               
+              console.log(this);
+            //   console.log(that);
+              
+                // console.log(params);
+                
           });
         },
         props: {

@@ -3,3 +3,11 @@ $base-border:1px solid $base-border-color;
 $base-panel-title-fontSize:16px;
 $base-panel-title-color:red;
 $base-font-font-family:MicrosoftYaHei;
+
+
+.float-map-menu {
+    z-index: 99999;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}

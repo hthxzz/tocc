@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import amap from "../../../components/map.vue";
+// import amap from "../../../components/map.vue";
 
     export default {
         name: '',

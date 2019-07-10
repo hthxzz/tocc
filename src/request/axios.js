@@ -52,21 +52,21 @@ const errorHandle = (status, other) => {
             break;
             // 404请求不存在
         case 404:
-            tip('请求的资源不存在');
+            tip('请求的资源不存在,路径可能不对');
             break;
         default:
             console.log(other);
     }
 }
 
-// 创建axios实例
+
 if (process.env.NODE_ENV == 'development') {
     axios.defaults.baseURL = "https://www.easy-mock.com/mock/5d08d65d78c2cb2a1bddf16a/rest/jtyj/"
 }else if (process.env.NODE_ENV == 'production') {
-    axios.defaults.baseURL = 'https://www.prodauction.com';
+    axios.defaults.baseURL = '';
 }
 console.log(axios.defaults.baseURL);
-
+// 创建axios实例
 var instance = axios.create({
     timeout: 1000 * 12
 });
@@ -78,12 +78,6 @@ instance.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlenco
  */
 instance.interceptors.request.use(
     config => {
-        // 登录流程控制中，根据本地是否存在token判断用户的登录情况        
-        // 但是即使token存在，也有可能token是过期的，所以在每次的请求头中携带token        
-        // 后台根据携带的token判断用户的登录情况，并返回给我们对应的状态码        
-        // 而后我们可以在响应拦截器中，根据状态码进行一些统一的操作。        
-        // const token = store.state.token;
-        // token && (config.headers.Authorization = token);
         return config;
     },
     error => Promise.error(error))
@@ -102,11 +96,6 @@ instance.interceptors.response.use(
             errorHandle(response.status, response.data.message);
             return Promise.reject(response);
         } else {
-            // 处理断网的情况
-            // eg:请求超时或断网时，更新state的network状态
-            // network状态在app.vue中控制着一个全局的断网提示组件的显示隐藏
-            // 关于断网组件中的刷新重新获取数据，会在断网组件中说明
-            // store.commit('changeNetwork', false);
         }
     });
  function $get(url,params){
@@ -119,6 +108,9 @@ instance.interceptors.response.use(
 };
 
 
-Vue.prototype.$get = $get;
-Vue.prototype.$post = $post;
-// export default instance;
+// Vue.prototype.$get = $get;
+// Vue.prototype.$post = $post;
+ export default {
+    $get: $get,
+    $post: $post
+ };

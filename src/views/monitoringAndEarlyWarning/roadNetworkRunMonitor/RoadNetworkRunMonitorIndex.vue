@@ -20,13 +20,15 @@
                 <div class="float-map-menu">
                     <MapFloatMenu></MapFloatMenu>
                 </div>
-                <amap />
+                <Amap />
                 <VerticesBorderStyle/>
             </div>
             <div class="right panel">
                 <panel>
                     <PanelItem  title="拥堵路段TOP10">
-                        <div class="content">拥堵路段TOP10</div>
+                        <div class="content">
+                            <ydld />
+                        </div>
                     </PanelItem>
                     <PanelItem title="交通事故事件统计">
                         <div class="content">22222222222222</div>
@@ -40,11 +42,12 @@
 </template>
 
 <script>
-import amap from "../../../components/map.vue";
+
+import ydld from "@/components/index/ydld.vue";
     export default {
         name: '',
         components: {
-            amap
+            ydld
         },
         data() {
             let data = []

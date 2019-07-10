@@ -15,9 +15,9 @@ export default new Router({
       component: Login
     },
     {
-      path: '/test',
-      name: 'test',
-      component: () => import( /* webpackChunkName: "about" */ './test/test.vue')
+      path: '/SearchPanel',
+      name: 'SearchPanel',
+      component: () => import( /* webpackChunkName: "about" */ './test/SearchPanel.vue')
     },
     {
       path: '/index',
