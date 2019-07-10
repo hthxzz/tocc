@@ -7,7 +7,10 @@ const   state = {
         hoverMenuEle: 'index',
         currentActiveMenuEle: '',
         menuList: temMenu,
-        currentActiveMenuTitle : '系统首页'
+        currentActiveMenuTitle : '系统首页',
+        menuWrapperSize:{
+            width:0
+        }
     };
 const   mutations ={
         switchMenuShow(state, status){
@@ -15,6 +18,11 @@ const   mutations ={
         },
         setCurrentActiveMenuTitle(state, title) {
             state.currentActiveMenuTitle = title;
+        },
+        setMenuWrapperSize(state, size) {
+            console.log(size);
+            
+            state.menuWrapperSize = size;
         }
     };
  const  actions = {

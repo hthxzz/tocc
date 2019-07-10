@@ -1,5 +1,5 @@
 <template>
-    <div class="wrapper"  v-bind:style="{top:positin[1] + 'px',left:positin[0] - elementHeight/2 < 10 ? 10 : positin[0] - elementHeight/2 +'px',visibility:visibility}" @mouseover="showMenu" @mouseleave="hideMenu">
+    <div class="wrapper"  v-bind:style="{top:positin[1] + 'px',left:positin[0] - elementWidth/2 < 10 ? 10 : positin[0] - elementWidth/2 +'px',visibility:visibility}" @mouseover="showMenu" @mouseleave="hideMenu">
         <span class="tran"  v-bind:style="{top:positin[1] -10 + 'px',left:positin[0] - 16 +'px'}"></span>
         <div class="item" :key="item.id" v-for="(item) in menuList" @click="goto($event)">
             <router-link :to="{path:item.route}" replace>
@@ -16,7 +16,7 @@
         name: '',
         data() {
             return {
-                elementHeight: 0
+                // elementWidth: 0,
             }
         },
         created () {
@@ -49,21 +49,24 @@
                 
                 let hoc = this.$store.state.app.hoverMenuEle
                  return this.$store.state.app.menuList[hoc];
+            },
+            elementWidth(){
+                return this.$store.state.app.menuWrapperSize.width;
             }
         },
         mounted () {
-          let wrapper = document.querySelector('.wrapper');
-        //   wrapper.style.visibility = 'hidden';
-          this.elementHeight = wrapper.getBoundingClientRect().width;  
+            if (this.$store.state.app.hoverMenuEle != "index") {
+                let wrapper = document.querySelector('.wrapper');
+                this.elementWidth = wrapper.getBoundingClientRect().width;  
+            }
+          
+          
         },
         methods: {
             goto(event){
-                // this.$router.push();
-                // switchMenuShow
-                console.log('tttttttttt');
-                event.currentTarget.querySelector('h2').innerHTML;
                 let currentActiveMenuEle = this.$store.state.app.currentActiveMenuEle;
                 let preActiveMenuEle = this.$store.state.app.preActiveMenuEle;
+                this.$store.state.app.menushow = false;
                 if (this.contentOfLeftMenu(currentActiveMenuEle.classList[0])) {
                     this.$store.state.app.currentActiveMenuEle.classList.add("left-actived");
                     preActiveMenuEle.classList.remove("left-actived");
