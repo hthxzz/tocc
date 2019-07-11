@@ -65,7 +65,6 @@ import { mapMutations } from 'vuex'
           this.$store.state.app.currentActiveMenuEle = this.$refs.index;
           this.$store.state.app.preActiveMenuEle = this.$refs.index;
           this.elementNav = document.querySelector("#nav").getBoundingClientRect();
-          console.log(process.env);
           
           setInterval(() => {
           var date = new Date(),
@@ -111,6 +110,10 @@ import { mapMutations } from 'vuex'
             }
             if (this.contentOfRightMenu(selectEleClass)) {
                 this.elementHover = event.srcElement.getBoundingClientRect();
+                console.log( this.elementHover);
+                console.log(selectEleClass);
+                
+                
                 this.$store.state.app.menushow = true;
                 this.$store.state.app.hoverMenuEle = selectEleClass;
             }
