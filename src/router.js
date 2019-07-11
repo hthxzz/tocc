@@ -14,6 +14,11 @@ export default new Router({
       name: 'login',
       component: Login
     },
+    // {
+    //   path: '/TablePagination',
+    //   name: 'TablePagination',
+    //   component: () => import( /* webpackChunkName: "about" */ './test/test1.vue')
+    // },
     {
       path: '/test1',
       name: 'test1',
